@@ -2,11 +2,34 @@
   "$schema": "../schemas/atelier.schema.json",
   "titre": "Atelier jeunesse",
   "saison": "2026-2027",
-  "introduction": "Un atelier de théâtre pour les enfants et les jeunes, encadré par les membres de la troupe.",
+  "introduction": "Venez faire l'expérience de la scène avec nous ! Des cours de théâtre hebdomadaires pour les enfants et les jeunes dès la 7H.",
   "texte": [
-    "<em>Contenu à reprendre de l'ancienne page « Atelier des jeunes ».</em>"
+    "Pour les enfants dès la 7H (5ᵉ primaire), le Théâtre de la Grappe de Vétroz organise des cours de théâtre animés par <strong>Muriel Délèze</strong>.",
+    "Les cours ont lieu chaque semaine durant la période scolaire, le jeudi, au <a href=\"/lieux/petit-tgv/\">Petit TGV</a>. Les horaires précis sont communiqués en fonction de la répartition des groupes.",
+    "À la fin de la saison, les participants aux ateliers ont le plaisir de vous présenter un spectacle de clôture."
   ],
-  "modalites": [],
+  "modalites": [
+    {
+      "libelle": "Âge",
+      "valeur": "dès la 7H (5ᵉ primaire)"
+    },
+    {
+      "libelle": "Jour",
+      "valeur": "le jeudi, horaire selon le groupe"
+    },
+    {
+      "libelle": "Lieu",
+      "valeur": "<a href=\"/lieux/petit-tgv/\">Petit TGV</a>, avenue de la Gare 148, Vétroz"
+    },
+    {
+      "libelle": "Animation",
+      "valeur": "Muriel Délèze"
+    },
+    {
+      "libelle": "Prix",
+      "valeur": "Fr. 300.– par participant pour la saison, payable avant le 30 novembre. Les chèques sport et culture de la commune de Vétroz sont acceptés ; la cotisation au TGV peut être déduite."
+    }
+  ],
   "inscription": {
     "url": "https://forms.gle/ffgfsob7Zu894BDo9",
     "ouverte": true,

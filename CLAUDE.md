@@ -45,9 +45,13 @@ eleventy.config.js     filtres, shortcodes images, plugins
 
 ## Modèle « spectacle » (résumé — voir schemas/spectacle.schema.json)
 
-`titre`, `annee` (= préfixe du nom de fichier), `categorie` (adulte | enfant | jeunesse | evenement) sont obligatoires. Puis : `provisoire`, `sousTitre`, `lieu` (id), `periode` (si pas encore de dates), `dates[] {date AAAA-MM-JJ, heure HH:MM, remarque}`, `billetterie` (un lien Infomaniak), `affiche {fichier, alt}`, `flyer {fichier}`, `resume`, `texte` (HTML restreint, chaîne ou liste de paragraphes), `videos[] {titre, url}`, `photos[]`, `aLAffiche`, `brouillon`.
+`titre`, `annee` (= préfixe du nom de fichier), `categorie` (adulte | enfant | jeunesse | evenement) sont obligatoires. Puis : `provisoire`, `sousTitre`, `lieu` (id d'un lieu ayant sa page) ou `lieuTexte` (ancienne salle, texte libre), `periode` (si pas encore de dates), `dates[] {date AAAA-MM-JJ, heure HH:MM, remarque}`, `billetterie` (un lien Infomaniak), `affiche {fichier, alt}`, `flyer {fichier}`, `resume`, `texte` (HTML restreint, chaîne ou liste de paragraphes), `videos[] {titre, url}`, `photos[]`, `aLAffiche`, `brouillon`.
 
 **À l'affiche** sur l'accueil = au moins une date ≥ aujourd'hui (heure de Zurich), ou `aLAffiche: true`. Un rebuild quotidien (GitHub Actions) met l'accueil à jour.
+
+Les dates ne sont saisies que si elles sont connues avec certitude (affiche, programme) ; sinon utiliser `periode`.
+
+Lieu : `nom`, `adresse`, `carte`, `description`, `parkings`, `transports`, `accessibilite` (HTML restreint), `photo`, `plan` (image d'accès ou des parkings).
 
 Renommer un fichier spectacle change son URL : ajouter alors une entrée dans `content/redirections.json`.
 

@@ -1,6 +1,6 @@
 # Site web du Théâtre de la Grappe de Vétroz (TGV)
 
-> Spécification v2.2 — 31 octobre 2026. Les décisions prises sont intégrées ; les points encore ouverts sont listés à la fin.
+> Spécification v2.3 — 31 octobre 2026. Les décisions prises sont intégrées ; les points encore ouverts sont listés à la fin.
 
 # 1. Généralités
 
@@ -126,6 +126,7 @@ CLAUDE.md                   guide technique pour l'assistant IA
 | `annee` | entier | oui | année de la première, sert au classement |
 | `categorie` | `adulte` \| `enfant` \| `jeunesse` \| `evenement` | oui | `jeunesse` = spectacle de l'atelier |
 | `lieu` | référence (ex. `union`) | non | identifiant d'un fichier de `content/lieux/` |
+| `lieuTexte` | texte | non | ancienne salle sans page, ex. « Hall populaire d'Ardon » |
 | `dates` | liste de `{ date, heure?, remarque? }` | non | `remarque` ex. « supplémentaire », « complet » |
 | `periode` | texte | non | affiché tant que `dates` est vide, ex. « février 2027 » |
 | `billetterie` | URL | non | un seul lien Infomaniak par spectacle |
@@ -148,7 +149,7 @@ Le build refuse toute autre balise ou attribut (`script`, `style`, `iframe`, `on
 
 ## 3.4 Lieu
 
-`nom`, `adresse`, `npa`, `localite`, `carte` (URL), `parkings` (HTML restreint), `transports` (HTML restreint), `accessibilite` (HTML restreint), `photo` (`{ fichier, alt }`).
+`nom`, `adresse` (`rue`, `npa`, `localite`), `carte` (URL), `description`, `parkings`, `transports`, `accessibilite` (HTML restreint), `photo` et `plan` (`{ fichier, alt, legende? }`).
 
 ## 3.5 Informations de référence
 
@@ -313,7 +314,7 @@ En conséquence :
 
 1. Spécification v2 et décisions *(fait)*.
 2. Squelette du dépôt : Eleventy, schémas, validation, GitHub Action, `CLAUDE.md` *(fait le 31.10.2026, avec un thème provisoire)*.
-3. Extraction et nettoyage du contenu WordPress → JSON, relecture.
+3. Extraction et nettoyage du contenu WordPress → JSON, relecture *(extraction faite le 31.10.2026 ; relecture : voir `TGV Site/reprise-wordpress.md` sur kDrive)*.
 4. Maquettes : 2 à 3 directions visuelles sur mobile, autour du logo, puis choix.
 5. Gabarits et thème.
 6. Saisie de la saison 2027 et des lieux.

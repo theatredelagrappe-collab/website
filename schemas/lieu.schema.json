@@ -23,6 +23,7 @@
     "parkings": { "$ref": "communs.schema.json#/$defs/texteHtml" },
     "transports": { "$ref": "communs.schema.json#/$defs/texteHtml" },
     "accessibilite": { "$ref": "communs.schema.json#/$defs/texteHtml" },
-    "photo": { "$ref": "communs.schema.json#/$defs/image" }
+    "photo": { "$ref": "communs.schema.json#/$defs/image" },
+    "plan": { "$ref": "communs.schema.json#/$defs/image", "description": "Plan d'accès ou des parkings." }
   }
 }

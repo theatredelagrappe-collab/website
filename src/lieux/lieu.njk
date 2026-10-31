@@ -21,9 +21,10 @@ eleventyComputed:
   {%- if lieu.photo %}<figure class="lieu-photo">{% image lieu.photo.fichier, lieu.photo.alt, "(min-width: 48rem) 48rem, 100vw" %}</figure>{% endif %}
   {%- if lieu.description %}<div class="texte">{{ lieu.description | html | safe }}</div>{% endif %}
   {%- if lieu.parkings %}<h2>Parkings</h2><div class="texte">{{ lieu.parkings | html | safe }}</div>{% endif %}
+  {%- if lieu.plan %}<figure class="lieu-plan">{% image lieu.plan.fichier, lieu.plan.alt, "(min-width: 48rem) 40rem, 100vw", [600, 1200] %}{% if lieu.plan.legende %}<figcaption>{{ lieu.plan.legende }}</figcaption>{% endif %}</figure>{% endif %}
   {%- if lieu.transports %}<h2>Transports publics</h2><div class="texte">{{ lieu.transports | html | safe }}</div>{% endif %}
   {%- if lieu.accessibilite %}<h2>Accessibilité</h2><div class="texte">{{ lieu.accessibilite | html | safe }}</div>{% endif %}
-  {%- if not (lieu.description or lieu.parkings or lieu.transports) %}
+  {%- if not (lieu.description or lieu.parkings or lieu.transports or lieu.plan) %}
   <p class="discret">Informations d'accès et de stationnement à venir.</p>
   {%- endif %}
 

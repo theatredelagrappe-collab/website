@@ -1,16 +1,49 @@
 {
   "$schema": "../schemas/apropos.schema.json",
   "titre": "À propos",
-  "introduction": "Le Théâtre de la Grappe est une société de théâtre amateur fondée à Vétroz en 1985.",
+  "introduction": "Le Théâtre de la Grappe de Vétroz (TGV) est une société de théâtre amateur fondée en 1985.",
   "texte": [
-    "<em>Contenu à reprendre de l'ancien site (pages « Théâtre » et « Staff »).</em>"
+    "Le TGV est ouvert à tous les habitants de la région de Vétroz dès 16 ans. Les plus jeunes peuvent profiter de l'<a href=\"/atelier-jeunesse/\">atelier jeunesse</a>.",
+    "La troupe se produit généralement une fois par année, pour une pièce ou une revue : retrouvez <a href=\"/spectacles/\">tous nos spectacles</a> et notre <a href=\"/historique/\">histoire</a>.",
+    "Envie de monter sur les planches, ou de rejoindre l'équipe ou le comité ? <a href=\"mailto:contact@theatredelagrappe.ch\">Écrivez-nous</a> !"
   ],
   "comite": [
-    { "fonction": "Président", "nom": "Raymond Nalesso" }
+    {
+      "fonction": "Président",
+      "nom": "Raymond Nalesso"
+    },
+    {
+      "fonction": "Caisse, formation des jeunes",
+      "nom": "Dominique Kuster"
+    },
+    {
+      "fonction": "Secrétariat",
+      "nom": "Sévrine Rudaz"
+    },
+    {
+      "fonction": "Communication",
+      "nom": "Camille Fontannaz"
+    },
+    {
+      "fonction": "Technique",
+      "nom": "Alexis Riand"
+    },
+    {
+      "fonction": "Direction artistique",
+      "nom": "Gaétan Mottet"
+    },
+    {
+      "fonction": "Intendance",
+      "nom": "Maud Solliard"
+    }
   ],
   "equipe": {
     "titre": "L'équipe",
-    "texte": ["<em>Contenu à reprendre de l'ancienne page « Staff ».</em>"],
+    "texte": [
+      "Le TGV, ce ne sont pas seulement les comédiennes et comédiens. C'est aussi des gens qui :",
+      "<ul><li>accueillent les spectateurs</li><li>tiennent le bar</li><li>installent les projecteurs</li><li>mettent en place la salle</li><li>nettoient et réparent lorsque la soirée est finie</li><li>fabriquent les décors</li><li>posent des affiches</li><li>écrivent des textes</li><li>mettent en scène</li><li>tiennent les comptes</li><li>montent des films publicitaires</li><li>réalisent des affiches</li><li>préparent à manger</li><li>gèrent la sono</li><li>animent les soirées</li><li>composent de la musique</li><li>ouvrent le rideau</li><li>boivent des bières</li><li>etc.</li></ul>",
+      "Bref, dans l'équipe du TGV, il y a de la place pour tout le monde : venez donc nombreux !"
+    ],
     "membres": []
   }
 }

@@ -16,6 +16,7 @@
       "description": "adulte = spectacle tout public de la troupe ; enfant = spectacle pour enfants ; jeunesse = spectacle de l'atelier jeunesse ; evenement = soirée spéciale, anniversaire…"
     },
     "lieu": { "type": "string", "pattern": "^[a-z0-9-]+$", "description": "Identifiant d'un lieu (nom de fichier dans content/lieux/ sans .json), ex. union, petit-tgv." },
+    "lieuTexte": { "type": "string", "description": "Lieu en texte libre, pour une salle qui n'a pas sa page (ex. « Hall populaire d'Ardon »). Ignoré si « lieu » est renseigné." },
     "periode": { "type": "string", "description": "Affiché tant qu'aucune date n'est saisie, ex. « février 2027 »." },
     "dates": {
       "type": "array",

@@ -33,6 +33,9 @@ eleventyComputed:
         {%- if s.lieu %}
         <dt>Lieu</dt>
         <dd><a href="{{ s.lieu.url }}">{{ s.lieu.nom }}</a>{% if s.lieu.adresse and s.lieu.adresse.localite %}, {{ s.lieu.adresse.localite }}{% endif %}</dd>
+        {%- elif s.lieuTexte %}
+        <dt>Lieu</dt>
+        <dd>{{ s.lieuTexte }}</dd>
         {%- endif %}
         <dt>{{ "Dates" if s.dates.length > 1 else "Date" }}</dt>
         <dd>
@@ -54,8 +57,13 @@ eleventyComputed:
       <div class="texte">{{ s.texte | html | safe }}</div>
       {%- endif %}
 
-      {%- if s.flyer %}
-      <p><a class="lien-fleche" href="/media/{{ s.flyer.fichier }}" target="_blank" rel="noopener">{{ s.flyer.libelle or "Voir le flyer" }}</a></p>
+      {%- if s.flyer and s.flyer.fichier.endsWith(".pdf") %}
+      <p><a class="lien-fleche" href="/media/{{ s.flyer.fichier }}" target="_blank" rel="noopener">{{ s.flyer.libelle or "Voir le flyer (PDF)" }}</a></p>
+      {%- elif s.flyer %}
+      <figure class="flyer">
+        {% image s.flyer.fichier, s.flyer.alt or ("Flyer de " + s.titre), "(min-width: 48rem) 36rem, 100vw", [600, 1200] %}
+        <figcaption>{{ s.flyer.libelle or "Flyer" }}</figcaption>
+      </figure>
       {%- endif %}
 
       {%- if s.videos and s.videos.length %}
@@ -87,7 +95,7 @@ eleventyComputed:
   "startDate": s.dates[0].date + ("T" + s.dates[0].heure if s.dates[0].heure else ""),
   "endDate": s.dates[s.dates.length - 1].date,
   "eventStatus": "https://schema.org/EventScheduled",
-  "location": { "@type": "Place", "name": s.lieu.nom if s.lieu else tgv.site.nom, "address": { "@type": "PostalAddress", "addressLocality": (s.lieu.adresse.localite if (s.lieu and s.lieu.adresse) else "Vétroz"), "addressCountry": "CH" } },
+  "location": { "@type": "Place", "name": s.lieu.nom if s.lieu else (s.lieuTexte or tgv.site.nom), "address": { "@type": "PostalAddress", "addressLocality": (s.lieu.adresse.localite if (s.lieu and s.lieu.adresse) else "Vétroz"), "addressCountry": "CH" } },
   "organizer": { "@type": "Organization", "name": tgv.site.nom, "url": tgv.site.url },
   "offers": ({ "@type": "Offer", "url": s.billetterie } if s.billetterie else undefined),
   "url": (page.url | absolue(tgv.site.url))

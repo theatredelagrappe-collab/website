@@ -3,6 +3,29 @@
   "titre": "Historique",
   "introduction": "Depuis 1985, le Théâtre de la Grappe fait vivre le théâtre à Vétroz.",
   "texte": [
-    "<em>Contenu à reprendre de l'ancienne page « Historique ».</em>"
+    "<h3>Les débuts</h3>",
+    "Animation, distraction, sourire, rire : tels étaient les ingrédients qui manquaient à l'époque à certains dîners de sociétés de Vétroz. Les Amis Gymnastes organisaient en 1984 la fête cantonale des pupilles et pupillettes ; pour remercier les membres qui avaient œuvré à cette manifestation, un souper style « Caf'conc » fut organisé.",
+    "Au programme, une comédie humoristique intitulée <em>La Machine à rajeunir</em>, présentée par Josiane Millius, Hélène Prince, Marie-Thérèse Cotter, Raphaël Papilloud, Marcel Michellod, Charly Rey et Daniel Cottagnoud. Puis une revue, <em>Au Bar Parallèle</em>, écrite et jouée par Marie-Françoise Udry, Daniel Vergère, Jacques-Roland Coudray et Roger Cotter. Les deux spectacles étaient mis en scène par le regretté Michel Genoud.",
+    "Pour satisfaire aux multiples demandes, une <a href=\"/spectacles/1985-soiree-du-rire/\">Soirée du rire</a> fut mise sur pied le 15 mai 1985. Suite à ce succès, la décision fut prise d'inviter toutes les personnes intéressées par l'art théâtral à une soirée d'information le 23 septembre 1985.",
+    "Ainsi naissait le Théâtre de la Grappe de Vétroz (TGV), avec Raphaël Papilloud à la présidence, entouré de Daniel Vergère, Marie-Françoise Udry, Marie-Thérèse Cotter et Jacques-Roland Coudray.",
+    "<h3>Une pièce et une revue</h3>",
+    "Dès lors, le TGV a pris le rythme de son célèbre homonyme et présente régulièrement une pièce de théâtre ou une revue.",
+    "Après 15 ans de comité, dont 10 à la présidence, Marie-Thérèse Cotter rentre dans le rang et Patricia Solliard devient, à l'aube de l'an 2000, la nouvelle présidente.",
+    "Le succès de ces spectacles est dû à tous ces passionnés qui foulent les tréteaux de notre village, et avant tout à nos metteurs en scène : Michel Genoud, Dany Revaz, Raphaël Papilloud, Françoise Gugger, Gérard Constantin, Bernard Sartoretti, Alexandre Buysse, Yannick Poujol, David Cotter, Patricia Solliard, Camille Fontannaz, Virginie Hugo, Muriel Délèze, Daniel Vergère…",
+    "<h3>Quelques étapes</h3>",
+    "<ul><li><strong>1985</strong> : <a href=\"/spectacles/1985-soiree-du-rire/\">Soirée du rire</a> et fondation du TGV.</li><li><strong>2015</strong> : les 30 ans, avec une pièce et une revue (<a href=\"/spectacles/2015-happy-birthday/\">Happy Birthday</a>).</li><li><strong>2019</strong> : <a href=\"/spectacles/2019-le-suicide/\">Le Suicidé</a>, grand spectacle en plein air sur la place du Four, avec les fanfares et le chœur mixte.</li><li><strong>2020</strong> : Marie-Noëlle Fontannaz et Patricia Solliard sont nommées membres d'honneur.</li><li><strong>2022</strong> : inauguration de la salle transformée du <a href=\"/lieux/petit-tgv/\">Petit TGV</a> avec <a href=\"/spectacles/2022-la-cour-des-grandes/\">La Cour des grandes</a>.</li><li><strong>2025</strong> : les 40 ans, avec à nouveau une pièce et une revue (<a href=\"/spectacles/2025-40-ans/\">Le TGV fête 40 ans et double la mise</a>).</li></ul>",
+    "Montez donc dans ce confortable TGV : vous verrez que le divertissement populaire que nous pratiquons ne peut vous apporter que détente, épanouissement et joie de vivre."
+  ],
+  "images": [
+    {
+      "fichier": "historique/troupe-1985.jpg",
+      "alt": "Photo de groupe de la troupe du TGV en 1985",
+      "legende": "La troupe en 1985. Devant : Christophe Genetti, Marie-Thérèse Cotter, Martine Vultagio, Daniel Vergère, Dany Revaz, Jean-François Biollaz, Marie-Françoise Udry, Roger Cotter, Jacques-Roland Coudray. Derrière : Pascal Vergère, Raphaëlle Biollaz, Raphaël Papilloud, Marcel Michellod, Michel Genoud, Hélène Prince, Patricia Di Stasi, Charly Rey, Josiane Millius, André Fontannaz."
+    },
+    {
+      "fichier": "historique/membres-honneur-2020.jpg",
+      "alt": "Deux membres d'honneur tenant leur diplôme",
+      "legende": "Marie-Noëlle Fontannaz et Patricia Solliard, membres d'honneur (2020)."
+    }
   ]
 }

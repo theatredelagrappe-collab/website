@@ -9,7 +9,7 @@
       {%- endif %}
     </div>
     <div class="carte-texte">
-      <p class="surtitre">{{ spectacle.categorie | categorieLibelle }}{% if spectacle.lieu %} · {{ spectacle.lieu.nom }}{% endif %}</p>
+      <p class="surtitre">{{ spectacle.categorie | categorieLibelle }}{% if spectacle.lieu %} · {{ spectacle.lieu.nom }}{% elif spectacle.lieuTexte %} · {{ spectacle.lieuTexte }}{% endif %}</p>
       <h3>{{ spectacle.titre }}{% if spectacle.provisoire %} <span class="badge">titre provisoire</span>{% endif %}</h3>
       <p class="dates">{{ spectacle | resumeDates }}</p>
     </div>

@@ -1,4 +1,157 @@
 {
   "$schema": "../schemas/redirections.schema.json",
-  "redirections": []
+  "redirections": [
+    {
+      "de": "/theatre/",
+      "vers": "/a-propos/"
+    },
+    {
+      "de": "/staff/",
+      "vers": "/a-propos/"
+    },
+    {
+      "de": "/comite/",
+      "vers": "/a-propos/"
+    },
+    {
+      "de": "/contact/",
+      "vers": "/a-propos/"
+    },
+    {
+      "de": "/agenda/",
+      "vers": "/"
+    },
+    {
+      "de": "/annonceurs/",
+      "vers": "/"
+    },
+    {
+      "de": "/pub/",
+      "vers": "/"
+    },
+    {
+      "de": "/atelier-des-jeunes/",
+      "vers": "/atelier-jeunesse/"
+    },
+    {
+      "de": "/inscriptionatelierjeune/",
+      "vers": "/atelier-jeunesse/"
+    },
+    {
+      "de": "/politique-de-cookies/",
+      "vers": "/confidentialite/"
+    },
+    {
+      "de": "/parkings-union/",
+      "vers": "/lieux/union/"
+    },
+    {
+      "de": "/projet-2019/",
+      "vers": "/spectacles/2019-le-suicide/"
+    },
+    {
+      "de": "/la-cour-des-grandes/",
+      "vers": "/spectacles/2022-la-cour-des-grandes/"
+    },
+    {
+      "de": "/historique/1985-soiree-du-rire/",
+      "vers": "/spectacles/1985-soiree-du-rire/"
+    },
+    {
+      "de": "/historique/2012-votez-indignes/",
+      "vers": "/spectacles/2012-votez-indignes/"
+    },
+    {
+      "de": "/historique/2013-mes-meilleurs-ennuis/",
+      "vers": "/spectacles/2013-mes-meilleurs-ennuis/"
+    },
+    {
+      "de": "/historique/2014-meurtre-a-lautruche-bleue/",
+      "vers": "/spectacles/2014-meurtre-a-l-autruche-bleue/"
+    },
+    {
+      "de": "/historique/2015-happy-birthday/",
+      "vers": "/spectacles/2015-happy-birthday/"
+    },
+    {
+      "de": "/historique/2016-activites-diverses/",
+      "vers": "/spectacles/2016-revue-festival-de-l-union/"
+    },
+    {
+      "de": "/historique/2017-paul-ma-laisse-sa-cle/",
+      "vers": "/spectacles/2017-paul-m-a-laisse-sa-cle/"
+    },
+    {
+      "de": "/historique/2018-tailleur-pour-dames/",
+      "vers": "/spectacles/2018-tailleur-pour-dames/"
+    },
+    {
+      "de": "/historique/2019-samo-oubitsa/",
+      "vers": "/spectacles/2019-le-suicide/"
+    },
+    {
+      "de": "/historique/2023-karrousel/",
+      "vers": "/spectacles/2023-karrousel/"
+    },
+    {
+      "de": "/2015/05/06/30-ans/",
+      "vers": "/spectacles/2015-happy-birthday/"
+    },
+    {
+      "de": "/2015/10/06/reservations-2015/",
+      "vers": "/spectacles/2015-happy-birthday/"
+    },
+    {
+      "de": "/2016/11/23/paul-ma-laisse-sa-cle/",
+      "vers": "/spectacles/2017-paul-m-a-laisse-sa-cle/"
+    },
+    {
+      "de": "/2018/01/04/tailleur-pour-dames/",
+      "vers": "/spectacles/2018-tailleur-pour-dames/"
+    },
+    {
+      "de": "/2018/02/19/supplementaire/",
+      "vers": "/spectacles/2018-tailleur-pour-dames/"
+    },
+    {
+      "de": "/2019/04/23/le-suicide/",
+      "vers": "/spectacles/2019-le-suicide/"
+    },
+    {
+      "de": "/2019/06/04/benevoles-vetrograd/",
+      "vers": "/spectacles/2019-le-suicide/"
+    },
+    {
+      "de": "/2019/08/24/le-suicide-bande-annonce/",
+      "vers": "/spectacles/2019-le-suicide/"
+    },
+    {
+      "de": "/2022/09/04/la-cour-des-grandes/",
+      "vers": "/spectacles/2022-la-cour-des-grandes/"
+    },
+    {
+      "de": "/2023/03/10/karrousel/",
+      "vers": "/spectacles/2023-karrousel/"
+    },
+    {
+      "de": "/2024/10/07/cuisine-et-dependances/",
+      "vers": "/spectacles/2024-cuisine-et-dependances/"
+    },
+    {
+      "de": "/2025/03/09/theatre-dinteret-general/",
+      "vers": "/spectacles/2025-theatre-d-interet-general/"
+    },
+    {
+      "de": "/2025/09/03/le-tgv-fete-40-ans-et-double-la-mise/",
+      "vers": "/spectacles/2025-40-ans/"
+    },
+    {
+      "de": "/2025/11/15/article-du-nouvelliste/",
+      "vers": "/spectacles/2025-40-ans/"
+    },
+    {
+      "de": "/2025/11/18/supplementaire-2/",
+      "vers": "/spectacles/2025-40-ans/"
+    }
+  ]
 }

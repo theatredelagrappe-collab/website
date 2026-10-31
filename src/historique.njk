@@ -11,9 +11,9 @@ eleventyComputed:
   {%- if p.introduction %}<p class="chapeau">{{ p.introduction }}</p>{% endif %}
   <div class="texte">{{ p.texte | html | safe }}</div>
   {%- if p.images and p.images.length %}
-  <div class="grille-photos">
-    {%- asyncEach i in p.images %}<figure>{% image i.fichier, i.alt, "(min-width: 48rem) 33vw, 50vw", [400, 800] %}{% if i.legende %}<figcaption>{{ i.legende }}</figcaption>{% endif %}</figure>{% endeach %}
-  </div>
+  {%- asyncEach i in p.images %}
+  <figure class="figure-large">{% image i.fichier, i.alt, "(min-width: 48rem) 48rem, 100vw", [600, 1200] %}{% if i.legende %}<figcaption>{{ i.legende }}</figcaption>{% endif %}</figure>
+  {%- endeach %}
   {%- endif %}
   <p><a class="lien-fleche" href="/spectacles/">Tous nos spectacles depuis {{ tgv.site.fondation }}</a></p>
 </article>
