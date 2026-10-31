@@ -1,6 +1,6 @@
 # Site web du Théâtre de la Grappe de Vétroz (TGV)
 
-> Spécification v2 — 31 octobre 2026. Les décisions prises sont intégrées ; les points encore ouverts sont listés à la fin.
+> Spécification v2.2 — 31 octobre 2026. Les décisions prises sont intégrées ; les points encore ouverts sont listés à la fin.
 
 # 1. Généralités
 
@@ -31,7 +31,7 @@ Le site WordPress du TGV (www.theatredelagrappe.ch) a été piraté et endommag�
 - Annonceurs / sponsors.
 - Agenda et actualités → renvoi vers Facebook et Instagram.
 - Newsletter (sera peut-être gérée autrement plus tard).
-- Formulaire de contact intégré → Google Forms.
+- Formulaire de contact → l'adresse e-mail suffit ; Google Forms uniquement pour les inscriptions.
 - Statistiques de visite, bannière de cookies, comptes utilisateurs.
 
 # 2. Sections du site
@@ -42,17 +42,18 @@ Le site est en français uniquement.
 
 - Logo et identité du TGV.
 - **Spectacles à l'affiche** : les spectacles de la saison en cours, avec affiche, lieu, dates et bouton « Réserver » (lien billetterie Infomaniak).
-  - Saison 2027 : un spectacle à la salle de l'Union, un spectacle au Petit TGV, deux spectacles pour enfants.
-- Liens vers Facebook et Instagram.
+  - Saison 2027 : voir 3.6.
+- Liens vers Facebook, Instagram et YouTube.
 - Accès rapides : atelier jeunesse, lieux, contact.
 
-Un spectacle apparaît à l'affiche tant qu'il lui reste au moins une date à venir (ou s'il est explicitement marqué `aLAffiche`). Ensuite, il ne figure plus que dans les archives. Un rebuild automatique hebdomadaire garantit que l'accueil se met à jour même sans modification.
+Un spectacle apparaît à l'affiche tant qu'il lui reste au moins une date à venir (ou s'il est explicitement marqué `aLAffiche`). Ensuite, il ne figure plus que dans les archives. Un rebuild automatique quotidien garantit que l'accueil se met à jour même sans modification.
 
 ## 2.2 À propos
 
 - Description de la société et de ses activités.
 - Composition du comité (fonction, nom ; photo facultative).
-- Contacts utiles : adresse postale, e-mail, lien vers le formulaire de contact Google Forms.
+- Équipe / staff (reprise de l'ancienne page « Staff », fusionnée ici).
+- Contacts utiles : adresse postale (c/o président), téléphone, e-mail `contact@theatredelagrappe.ch`, réseaux sociaux. Pas de formulaire de contact : l'e-mail suffit.
 
 ## 2.3 Historique
 
@@ -61,7 +62,7 @@ Texte libre : fondation, grands spectacles, évolution. Peut renvoyer vers les f
 ## 2.4 Atelier jeunesse
 
 - Description, modalités, horaires, prix, saison concernée.
-- Lien vers le formulaire d'inscription Google Forms.
+- Lien vers le formulaire d'inscription Google Forms (voir 3.5).
 - Photos : uniquement si les enfants n'y sont pas reconnaissables (floutage). Pas de photo d'enfant identifiable sur le site.
 
 ## 2.5 Spectacles
@@ -72,11 +73,13 @@ Texte libre : fondation, grands spectacles, évolution. Peut renvoyer vers les f
 
 ## 2.6 Lieux
 
-Une page par lieu (actuellement 2 : la salle de l'Union et le Petit TGV) : adresse, plan d'accès (lien vers une carte), parkings, transports publics, accessibilité, photo. Chaque spectacle renvoie vers la page de son lieu.
+Une page par lieu (actuellement 2 : la Salle de l'Union et le Petit TGV) : adresse, plan d'accès (lien vers une carte), parkings, transports publics, accessibilité, photo. Chaque spectacle renvoie vers la page de son lieu.
+
+Le descriptif et les informations précises (adresse, parkings, accès) seront rédigés manuellement plus tard ; au lancement, une page de lieu peut ne contenir que le nom et le lien vers la carte.
 
 ## 2.7 Pages techniques
 
-- **Mentions légales** : responsable du site (association), adresse.
+- **Mentions légales** : Théâtre de la Grappe (association), c/o Raymond Nalesso, adresse et e-mail de contact.
 - **Confidentialité** (nLPD) : le site ne dépose pas de cookies et n'utilise pas de traceur ; il renvoie vers des services tiers (Google Forms, Infomaniak, YouTube, Facebook, Instagram) qui ont leurs propres règles.
 - Page 404.
 
@@ -87,6 +90,7 @@ Toutes les données sont dans des fichiers JSON structurés, validés par des JS
 ## 3.1 Arborescence
 
 ```
+Resources/                  sources graphiques (logo_tgv.pdf original, logo_tgv.svg converti), non publiées telles quelles
 content/
   site.json                 nom, adresse, e-mail, réseaux sociaux, liens Google Forms
   apropos.json              texte, comité
@@ -107,6 +111,11 @@ schemas/
   site.schema.json, spectacle.schema.json, lieu.schema.json, …
 theme/
   theme.json                couleurs, polices, fond → variables CSS
+  fonts/                    polices .woff2
+src/                        gabarits Nunjucks et CSS
+lib/                        chargement des données, HTML restreint, génération des icônes
+scripts/                    validation (check.js), contrôle des liens (check-links.js)
+CLAUDE.md                   guide technique pour l'assistant IA
 ```
 
 ## 3.2 Spectacle
@@ -118,6 +127,7 @@ theme/
 | `categorie` | `adulte` \| `enfant` \| `jeunesse` \| `evenement` | oui | `jeunesse` = spectacle de l'atelier |
 | `lieu` | référence (ex. `union`) | non | identifiant d'un fichier de `content/lieux/` |
 | `dates` | liste de `{ date, heure?, remarque? }` | non | `remarque` ex. « supplémentaire », « complet » |
+| `periode` | texte | non | affiché tant que `dates` est vide, ex. « février 2027 » |
 | `billetterie` | URL | non | un seul lien Infomaniak par spectacle |
 | `affiche` | `{ fichier, alt }` | non | `alt` obligatoire si l'affiche est présente |
 | `flyer` | `{ fichier, alt? }` | non | image ou PDF |
@@ -140,10 +150,39 @@ Le build refuse toute autre balise ou attribut (`script`, `style`, `iframe`, `on
 
 `nom`, `adresse`, `npa`, `localite`, `carte` (URL), `parkings` (HTML restreint), `transports` (HTML restreint), `accessibilite` (HTML restreint), `photo` (`{ fichier, alt }`).
 
+## 3.5 Informations de référence
+
+Contenu initial de `content/site.json` et des lieux :
+
+| Élément | Valeur |
+|---|---|
+| E-mail | `contact@theatredelagrappe.ch` |
+| Adresse postale | Théâtre de la Grappe, c/o Raymond Nalesso (président), Rue des Semailles 28, 1963 Vétroz, Suisse |
+| Téléphone | +41 79 514 95 84 |
+| Facebook | https://www.facebook.com/theatredelagrappe |
+| Instagram | https://www.instagram.com/theatredelagrappe/ |
+| YouTube | `@ThéâtredelaGrappe` → https://www.youtube.com/@ThéâtredelaGrappe (URL à vérifier) |
+| Inscription atelier enfants | https://forms.gle/ffgfsob7Zu894BDo9 |
+| Lieu `union` — Salle de l'Union | carte : https://maps.app.goo.gl/Sww8EFWdkHHRhm3h9 |
+| Lieu `petit-tgv` — Petit TGV | carte : https://maps.app.goo.gl/fzM5xD7u7ht74RcS9 |
+
+## 3.6 Saison 2027 (état au 31.10.2026)
+
+Seuls deux spectacles sont annoncés pour l'instant ; les autres seront ajoutés plus tard.
+
+| Fichier | Titre (provisoire) | Catégorie | Lieu | Période |
+|---|---|---|---|---|
+| `2027-piece-comique.json` | Pièce comique | adulte | `union` | février 2027 |
+| `2027-tgv-relax.json` | TGV Relax | adulte | `petit-tgv` | avril 2027 |
+
+Tant que les dates exactes ne sont pas connues, ces fiches portent `aLAffiche: true` et un champ `periode` (texte libre, ex. « février 2027 ») affiché à la place des dates. Le changement de nom de fichier au moment du titre définitif implique d'ajouter une redirection (5.5).
+
 # 4. Interface
 
 - Mobile d'abord : conçu pour le téléphone, confortable sur PC.
 - Le logo (la grappe de raisin) est conservé ; le reste de l'identité visuelle (couleurs, polices, mise en page) est entièrement repensé.
+  - Source : `Resources/logo_tgv.pdf` (Inkscape, vectoriel, monochrome noir, texte vectorisé).
+  - Converti en SVG pour le site, avec la couleur en `currentColor` pour s'adapter au thème (fond clair ou sombre). Déclinaisons générées : favicon, icône pour les téléphones, image de partage par défaut.
 - Les éléments de style (couleurs, polices, fond) sont définis dans `theme/theme.json`, transformés en variables CSS au build : changer de thème ne demande aucune modification des gabarits.
 - Polices auto-hébergées (pas d'appel à Google Fonts).
 - Pas de JavaScript nécessaire au fonctionnement ; au plus un peu de JS d'agrément (menu mobile, agrandissement d'affiche).
@@ -160,8 +199,8 @@ Le build refuse toute autre balise ou attribut (`script`, `style`, `iframe`, `on
 - Images : **sharp** (redimensionnement, WebP + JPEG de repli, suppression des métadonnées).
 - Commandes npm :
   - `npm run dev` : serveur local avec rechargement automatique ;
-  - `npm run check` : validation des données, du HTML et des liens internes ;
-  - `npm run build` : génération du site dans `_site/`.
+  - `npm run check` : validation des données, du HTML, des références et des médias ;
+  - `npm run build` : `check`, génération du site dans `_site/`, puis contrôle des liens internes.
 
 ## 5.2 Médias
 
@@ -173,15 +212,45 @@ Le build refuse toute autre balise ou attribut (`script`, `style`, `iframe`, `on
 
 - Hébergement : **GitHub Pages**, dépôt `theatredelagrappe-collab/website`.
 - Le dépôt est **public** (exigé par GitHub Pages en offre gratuite) : il ne doit contenir aucun secret ni aucune donnée personnelle hormis ce qui est publié sur le site.
-- Publication : une **GitHub Action** construit et déploie le site à chaque push sur `main`, plus un rebuild planifié chaque semaine (mise à jour de l'accueil). La CI échoue si `check` échoue : rien d'invalide n'est publié.
-- Domaine : `theatredelagrappe.ch` et `www.theatredelagrappe.ch` pointés vers GitHub Pages (enregistrements DNS chez le registraire), HTTPS automatique. Les enregistrements MX (e-mail) ne sont pas modifiés.
+- Publication : une **GitHub Action** (`.github/workflows/publication.yml`) construit et déploie le site à chaque push sur `main`, plus un rebuild planifié chaque nuit (mise à jour de l'accueil). Les autres branches sont seulement vérifiées. La CI échoue si `build` échoue : rien d'invalide n'est publié.
+- Mise en service (une fois) : dépôt → *Settings* → *Pages* → *Build and deployment* → *Source* : **GitHub Actions**. Avant le passage au domaine, le site est visible sur `https://theatredelagrappe-collab.github.io/website/` (le préfixe `/website/` est géré automatiquement).
+- Attention : GitHub désactive les tâches planifiées d'un dépôt public après 60 jours sans commit (avec un e-mail d'avertissement). Il suffit alors de les réactiver dans l'onglet *Actions*, ou de faire un commit.
+- Domaine : `theatredelagrappe.ch` et `www.theatredelagrappe.ch` pointés vers GitHub Pages (enregistrements DNS chez le registraire), HTTPS automatique. Les enregistrements MX ne doivent pas être modifiés : l'adresse `contact@theatredelagrappe.ch` dépend du domaine.
 - Plus aucun accès FTP n'est nécessaire.
 
-## 5.4 Anciennes adresses
+## 5.4 Mise en ligne — opérations DNS manuelles
+
+Le domaine est géré par Dom chez **swisscenter.ch**. À faire **au moment de la mise en ligne** (pas avant : le domaine pointerait vers un site vide).
+
+1. **Quelques jours avant** : abaisser le TTL des enregistrements `@` et `www` à 300 s (bascule rapide, retour arrière facile).
+2. **GitHub, paramètres de l'organisation** `theatredelagrappe-collab` → *Pages* → *Add a domain* : `theatredelagrappe.ch`. GitHub fournit un enregistrement TXT de vérification, à créer chez Swisscenter :
+   - `TXT  _github-pages-challenge-theatredelagrappe-collab  <valeur fournie par GitHub>`
+   puis cliquer *Verify*. Cela empêche qu'un autre compte GitHub puisse s'approprier le domaine.
+3. **Chez Swisscenter**, zone DNS de `theatredelagrappe.ch` :
+   - supprimer les enregistrements `A` / `AAAA` de `@` et `www` qui pointent vers l'ancien hébergement ;
+   - créer pour `@` :
+     ```
+     A     185.199.108.153
+     A     185.199.109.153
+     A     185.199.110.153
+     A     185.199.111.153
+     AAAA  2606:50c0:8000::153
+     AAAA  2606:50c0:8001::153
+     AAAA  2606:50c0:8002::153
+     AAAA  2606:50c0:8003::153
+     ```
+   - créer pour `www` : `CNAME  theatredelagrappe-collab.github.io.`
+   - **ne pas toucher** aux enregistrements `MX`, au `TXT` SPF, à DKIM/DMARC ni aux éventuels `autoconfig`, `mail`, `imap`, `smtp` : ils font fonctionner `contact@theatredelagrappe.ch`.
+4. **GitHub, dépôt** → *Settings* → *Pages* → *Custom domain* : `www.theatredelagrappe.ch` (avec une publication par GitHub Actions, aucun fichier `CNAME` n'est nécessaire dans le dépôt). La version sans `www` redirige automatiquement.
+5. Attendre que le certificat soit émis (quelques minutes à quelques heures), puis cocher **Enforce HTTPS**.
+6. Contrôler : `https://theatredelagrappe.ch`, `https://www.theatredelagrappe.ch`, une ancienne URL redirigée, et l'envoi/réception d'un e-mail sur `contact@`.
+7. **Ancien hébergement Swisscenter** : effacer tous les fichiers du site compromis et sa base de données, puis désactiver PHP ou résilier l'hébergement web. Avant de résilier, vérifier que la messagerie ne fait pas partie du même abonnement.
+
+## 5.5 Anciennes adresses
 
 GitHub Pages ne gère pas les redirections serveur (`.htaccess` inopérant). Les anciennes URL WordPress connues (ex. `/2017-paul-m-a-laisse-sa-cle/`) sont reprises dans `content/redirections.json` ; le build génère pour chacune une page de redirection (meta refresh + lien canonique).
 
-## 5.5 Référencement
+## 5.6 Référencement
 
 `sitemap.xml`, `robots.txt`, titres et descriptions par page, données structurées `TheaterEvent` (schema.org) pour les spectacles à l'affiche.
 
@@ -235,15 +304,15 @@ En conséquence :
 
 ## 7.3 Inventaire du contenu existant
 
-- Pages à reprendre : Théâtre, Historique, Comité, Staff, Atelier des jeunes, Parkings Union (→ page lieu).
+- Pages à reprendre : Théâtre, Historique, Comité, Staff (→ fusionnée dans À propos), Atelier des jeunes, Parkings Union (→ page lieu `union`).
 - Pages spectacles existantes : 1985, 2012 à 2019, 2023.
 - Spectacles présents uniquement comme articles : 2019 *Le suicidé*, 2022 *La cour des grandes*, 2024 *Cuisine et dépendances*, 2025 *Le TGV fête 40 ans et double la mise*.
 - Pages abandonnées : Annonceurs, Pub, Agenda, Contact, Projet 2019, Politique de cookies (remplacée par la page Confidentialité).
 
 ## 7.4 Étapes
 
-1. Spécification v2 et décisions *(ce document)*.
-2. Squelette du dépôt : Eleventy, schémas, validation, GitHub Action, `CLAUDE.md`.
+1. Spécification v2 et décisions *(fait)*.
+2. Squelette du dépôt : Eleventy, schémas, validation, GitHub Action, `CLAUDE.md` *(fait le 31.10.2026, avec un thème provisoire)*.
 3. Extraction et nettoyage du contenu WordPress → JSON, relecture.
 4. Maquettes : 2 à 3 directions visuelles sur mobile, autour du logo, puis choix.
 5. Gabarits et thème.
@@ -253,9 +322,8 @@ En conséquence :
 
 # 8. Points ouverts
 
-- [ ] Nom exact et adresse des deux lieux (salle de l'Union, Petit TGV), infos parkings et accès.
-- [ ] Où est géré le domaine `theatredelagrappe.ch` (registraire, DNS) ? Y a-t-il des adresses e-mail sur ce domaine ?
-- [ ] Adresse e-mail de contact publique, liens Facebook et Instagram, liens des Google Forms (contact, inscription atelier).
-- [ ] Logo en haute résolution, idéalement en vectoriel (SVG, AI, EPS ou PDF).
-- [ ] Saison 2027 : titres, dates, lieux, affiches et liens billetterie des quatre spectacles (au fur et à mesure).
-- [ ] Le contenu de l'ancienne page « Staff » est-il fusionné dans À propos ou abandonné ?
+Réglés le 31.10.2026 : dépôt public, e-mail, réseaux sociaux, liens des lieux, formulaire d'inscription, page Staff, logo, spectacles 2027 annoncés, domaine (Dom, chez Swisscenter, procédure en 5.4), adresse postale, contact par e-mail uniquement.
+
+- [ ] Descriptif des deux lieux (adresse, parkings, accès) — rédaction manuelle prévue.
+- [ ] Spectacles 2027 : titres définitifs, dates, affiches, liens billetterie (au fur et à mesure).
+- [ ] Vérifier l'URL de la chaîne YouTube.
