@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Informations générales du site",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["nom", "description", "url", "contact", "reseaux"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "nom": { "type": "string", "description": "Nom complet, ex. Théâtre de la Grappe" },
+    "nomCourt": { "type": "string", "description": "Ex. TGV" },
+    "description": { "type": "string", "maxLength": 200, "description": "Phrase de présentation (moteurs de recherche, partage)." },
+    "url": { "$ref": "communs.schema.json#/$defs/url", "description": "Adresse publique définitive du site, sans / final." },
+    "fondation": { "type": "integer", "minimum": 1900 },
+    "contact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["email"],
+      "properties": {
+        "email": { "type": "string", "format": "email" },
+        "telephone": { "type": "string", "pattern": "^\\+?[0-9 ]+$" },
+        "adresse": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["rue", "npa", "localite"],
+          "properties": {
+            "complement": { "type": "string", "description": "Ex. c/o Raymond Nalesso" },
+            "rue": { "type": "string" },
+            "npa": { "type": "string", "pattern": "^[0-9]{4}$" },
+            "localite": { "type": "string" },
+            "pays": { "type": "string" }
+          }
+        }
+      }
+    },
+    "reseaux": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "facebook": { "$ref": "communs.schema.json#/$defs/url" },
+        "instagram": { "$ref": "communs.schema.json#/$defs/url" },
+        "youtube": { "$ref": "communs.schema.json#/$defs/url" }
+      }
+    }
+  }
+}

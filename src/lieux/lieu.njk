@@ -1,0 +1,40 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: tgv.listeLieux
+  size: 1
+  alias: lieu
+  addAllPagesToCollections: true
+permalink: "/lieux/{{ lieu.id }}/"
+eleventyComputed:
+  titre: "{{ lieu.nom }}"
+  description: "{{ lieu.nom }} — accès, parkings et informations pratiques pour venir aux spectacles du Théâtre de la Grappe."
+  imagePartageFichier: "{{ lieu.photo.fichier if lieu.photo else '' }}"
+---
+<article class="conteneur section lieu">
+  <p class="fil"><a href="/lieux/">Nos lieux</a></p>
+  <h1>{{ lieu.nom }}</h1>
+  {%- if lieu.adresse %}
+  <p class="chapeau">{% if lieu.adresse.rue %}{{ lieu.adresse.rue }}, {% endif %}{% if lieu.adresse.npa %}{{ lieu.adresse.npa }} {% endif %}{{ lieu.adresse.localite }}</p>
+  {%- endif %}
+  {%- if lieu.carte %}<p><a class="bouton" href="{{ lieu.carte }}" target="_blank" rel="noopener">Voir sur la carte</a></p>{% endif %}
+  {%- if lieu.photo %}<figure class="lieu-photo">{% image lieu.photo.fichier, lieu.photo.alt, "(min-width: 48rem) 48rem, 100vw" %}</figure>{% endif %}
+  {%- if lieu.description %}<div class="texte">{{ lieu.description | html | safe }}</div>{% endif %}
+  {%- if lieu.parkings %}<h2>Parkings</h2><div class="texte">{{ lieu.parkings | html | safe }}</div>{% endif %}
+  {%- if lieu.transports %}<h2>Transports publics</h2><div class="texte">{{ lieu.transports | html | safe }}</div>{% endif %}
+  {%- if lieu.accessibilite %}<h2>Accessibilité</h2><div class="texte">{{ lieu.accessibilite | html | safe }}</div>{% endif %}
+  {%- if not (lieu.description or lieu.parkings or lieu.transports) %}
+  <p class="discret">Informations d'accès et de stationnement à venir.</p>
+  {%- endif %}
+
+  {%- set ici = [] %}
+  {%- for spectacle in tgv.aLAffiche %}{% if spectacle.lieu and spectacle.lieu.id == lieu.id %}{% set ici = (ici.push(spectacle), ici) %}{% endif %}{% endfor %}
+  {%- if ici.length %}
+  <section class="section-courte">
+    <h2>À l'affiche ici</h2>
+    <div class="grille-cartes">
+      {%- asyncEach spectacle in ici %}{% include "partials/carte-spectacle.njk" %}{% endeach %}
+    </div>
+  </section>
+  {%- endif %}
+</article>

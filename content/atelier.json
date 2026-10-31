@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/atelier.schema.json",
+  "titre": "Atelier jeunesse",
+  "saison": "2026-2027",
+  "introduction": "Un atelier de théâtre pour les enfants et les jeunes, encadré par les membres de la troupe.",
+  "texte": [
+    "<em>Contenu à reprendre de l'ancienne page « Atelier des jeunes ».</em>"
+  ],
+  "modalites": [],
+  "inscription": {
+    "url": "https://forms.gle/ffgfsob7Zu894BDo9",
+    "ouverte": true,
+    "texte": "S'inscrire à l'atelier"
+  },
+  "photos": []
+}

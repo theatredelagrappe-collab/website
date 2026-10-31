@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr-CH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- set nomSite = tgv.site.nom %}
+  {%- set titreComplet = (titre + " — " + nomSite) if (titre and not estAccueil) else (nomSite + " · Vétroz") %}
+  {%- set desc = description or tgv.site.description %}
+  {%- set urlPage = page.url | absolue(tgv.site.url) %}
+  <title>{{ titreComplet }}</title>
+  <meta name="description" content="{{ desc }}">
+  <link rel="canonical" href="{{ urlPage }}">
+  <meta name="theme-color" content="{{ tgv.theme.couleurs.fond }}">
+
+  <meta property="og:site_name" content="{{ nomSite }}">
+  <meta property="og:locale" content="fr_CH">
+  <meta property="og:type" content="{{ 'website' if estAccueil else 'article' }}">
+  <meta property="og:title" content="{{ titre or nomSite }}">
+  <meta property="og:description" content="{{ desc }}">
+  <meta property="og:url" content="{{ urlPage }}">
+  {%- if imagePartageFichier %}
+  <meta property="og:image" content="{% imagePartage imagePartageFichier, tgv.site.url %}">
+  {%- else %}
+  <meta property="og:image" content="{{ '/assets/partage.jpg' | absolue(tgv.site.url) }}">
+  {%- endif %}
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/style.css">
+  {%- block head %}{% endblock %}
+</head>
+<body>
+  <a class="evitement" href="#contenu">Aller au contenu</a>
+  {% include "partials/entete.njk" %}
+  <main id="contenu">
+    {{ content | safe }}
+  </main>
+  {% include "partials/pied.njk" %}
+</body>
+</html>

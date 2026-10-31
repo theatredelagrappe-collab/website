@@ -1,0 +1,34 @@
+---
+layout: layouts/base.njk
+permalink: /atelier-jeunesse/
+eleventyComputed:
+  titre: "{{ tgv.atelier.titre }}"
+  description: "{{ tgv.atelier.introduction or tgv.site.description }}"
+---
+{%- set a = tgv.atelier %}
+<article class="conteneur section page-texte">
+  <h1>{{ a.titre }}</h1>
+  <p class="surtitre">Saison {{ a.saison | replace("-", "–") }}</p>
+  {%- if a.introduction %}<p class="chapeau">{{ a.introduction }}</p>{% endif %}
+
+  {%- if a.inscription and a.inscription.ouverte !== false %}
+  <p><a class="bouton bouton-grand" href="{{ a.inscription.url }}" target="_blank" rel="noopener">{{ a.inscription.texte or "S'inscrire" }}</a></p>
+  {%- endif %}
+
+  <div class="texte">{{ a.texte | html | safe }}</div>
+
+  {%- if a.modalites and a.modalites.length %}
+  <section class="section-courte encadre" aria-labelledby="titre-modalites">
+    <h2 id="titre-modalites">Infos pratiques</h2>
+    <dl class="fiche">
+      {%- for m in a.modalites %}<dt>{{ m.libelle }}</dt><dd>{{ m.valeur | html | safe }}</dd>{% endfor %}
+    </dl>
+  </section>
+  {%- endif %}
+
+  {%- if a.photos and a.photos.length %}
+  <div class="grille-photos">
+    {%- asyncEach p in a.photos %}<figure>{% image p.fichier, p.alt, "(min-width: 48rem) 33vw, 50vw", [400, 800] %}{% if p.legende %}<figcaption>{{ p.legende }}</figcaption>{% endif %}</figure>{% endeach %}
+  </div>
+  {%- endif %}
+</article>

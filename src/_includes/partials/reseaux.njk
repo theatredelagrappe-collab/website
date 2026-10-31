@@ -1,0 +1,6 @@
+{%- set r = tgv.site.reseaux %}
+<ul class="reseaux">
+  {%- if r.facebook %}<li><a href="{{ r.facebook }}" target="_blank" rel="noopener">{% include "partials/icone-facebook.svg" %}<span>Facebook</span></a></li>{% endif %}
+  {%- if r.instagram %}<li><a href="{{ r.instagram }}" target="_blank" rel="noopener">{% include "partials/icone-instagram.svg" %}<span>Instagram</span></a></li>{% endif %}
+  {%- if r.youtube %}<li><a href="{{ r.youtube }}" target="_blank" rel="noopener">{% include "partials/icone-youtube.svg" %}<span>YouTube</span></a></li>{% endif %}
+</ul>

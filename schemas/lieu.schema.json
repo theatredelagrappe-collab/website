@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Lieu de spectacle",
+  "description": "L'identifiant du lieu est le nom du fichier (ex. union.json → union).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["nom"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "nom": { "type": "string" },
+    "adresse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["localite"],
+      "properties": {
+        "rue": { "type": "string" },
+        "npa": { "type": "string", "pattern": "^[0-9]{4}$" },
+        "localite": { "type": "string" }
+      }
+    },
+    "carte": { "$ref": "communs.schema.json#/$defs/url", "description": "Lien Google Maps ou autre." },
+    "description": { "$ref": "communs.schema.json#/$defs/texteHtml" },
+    "parkings": { "$ref": "communs.schema.json#/$defs/texteHtml" },
+    "transports": { "$ref": "communs.schema.json#/$defs/texteHtml" },
+    "accessibilite": { "$ref": "communs.schema.json#/$defs/texteHtml" },
+    "photo": { "$ref": "communs.schema.json#/$defs/image" }
+  }
+}

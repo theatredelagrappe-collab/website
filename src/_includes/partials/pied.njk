@@ -1,0 +1,33 @@
+{%- set s = tgv.site %}
+<footer class="pied">
+  <div class="pied-interieur">
+    <div class="pied-bloc">
+      <img class="pied-logo" src="/assets/logo-pied.svg" alt="" width="113" height="96">
+      <p>{{ s.description }}</p>
+    </div>
+    <div class="pied-bloc">
+      <h2>Contact</h2>
+      <address>
+        {{ s.nom }}<br>
+        {%- if s.contact.adresse %}
+        {%- set a = s.contact.adresse %}
+        {% if a.complement %}{{ a.complement }}<br>{% endif %}
+        {{ a.rue }}<br>{{ a.npa }} {{ a.localite }}<br>
+        {%- endif %}
+        <a href="mailto:{{ s.contact.email }}">{{ s.contact.email }}</a>
+        {%- if s.contact.telephone %}<br><a href="{{ s.contact.telephone | telLien }}">{{ s.contact.telephone }}</a>{% endif %}
+      </address>
+    </div>
+    <div class="pied-bloc">
+      <h2>Suivez-nous</h2>
+      {% include "partials/reseaux.njk" %}
+      <h2>Nos lieux</h2>
+      <ul class="liste-simple">
+        {%- for lieu in tgv.listeLieux %}<li><a href="{{ lieu.url }}">{{ lieu.nom }}</a></li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="pied-bas">
+    <p>© {{ build.annee }} {{ s.nom }} · <a href="/mentions-legales/">Mentions légales</a> · <a href="/confidentialite/">Confidentialité</a></p>
+  </div>
+</footer>

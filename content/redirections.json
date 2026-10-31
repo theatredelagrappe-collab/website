@@ -1,0 +1,4 @@
+{
+  "$schema": "../schemas/redirections.schema.json",
+  "redirections": []
+}

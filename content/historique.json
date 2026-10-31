@@ -1,0 +1,8 @@
+{
+  "$schema": "../schemas/page.schema.json",
+  "titre": "Historique",
+  "introduction": "Depuis 1985, le Théâtre de la Grappe fait vivre le théâtre à Vétroz.",
+  "texte": [
+    "<em>Contenu à reprendre de l'ancienne page « Historique ».</em>"
+  ]
+}

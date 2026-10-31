@@ -1,0 +1,95 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: tgv.spectacles
+  size: 1
+  alias: spectacle
+  addAllPagesToCollections: true
+permalink: "/spectacles/{{ spectacle.slug }}/"
+eleventyComputed:
+  titre: "{{ spectacle.titre }}"
+  description: "{{ spectacle.resume or (spectacle.texte | texteBrut(160)) or (spectacle.titre + ' — ' + tgv.site.nom) }}"
+  imagePartageFichier: "{{ spectacle.affiche.fichier if spectacle.affiche else '' }}"
+---
+{%- set s = spectacle %}
+<article class="conteneur section spectacle">
+  <p class="fil"><a href="/spectacles/">Spectacles</a> › {{ s.annee }}</p>
+  <div class="spectacle-grille">
+    <div class="spectacle-affiche">
+      {%- if s.affiche %}
+      {% image s.affiche.fichier, s.affiche.alt, "(min-width: 48rem) 40vw, 100vw", [400, 800, 1200], "eager" %}
+      {%- if s.affiche.legende %}<p class="legende">{{ s.affiche.legende }}</p>{% endif %}
+      {%- else %}
+      <div class="affiche-vide"><img src="/assets/logo.svg" alt="" width="227" height="193"></div>
+      {%- endif %}
+    </div>
+    <div class="spectacle-infos">
+      <p class="surtitre">{{ s.categorie | categorieLibelle }} · {{ s.annee }}</p>
+      <h1>{{ s.titre }}</h1>
+      {%- if s.provisoire %}<p><span class="badge">titre provisoire</span></p>{% endif %}
+      {%- if s.sousTitre %}<p class="sous-titre">{{ s.sousTitre }}</p>{% endif %}
+
+      <dl class="fiche">
+        {%- if s.lieu %}
+        <dt>Lieu</dt>
+        <dd><a href="{{ s.lieu.url }}">{{ s.lieu.nom }}</a>{% if s.lieu.adresse and s.lieu.adresse.localite %}, {{ s.lieu.adresse.localite }}{% endif %}</dd>
+        {%- endif %}
+        <dt>{{ "Dates" if s.dates.length > 1 else "Date" }}</dt>
+        <dd>
+          {%- if s.dates.length %}
+          <ul class="liste-dates">
+            {%- for d in s.dates %}
+            <li{% if d.passee %} class="passee"{% endif %}>{{ d.date | dateLongue(d.heure) }}{% if d.remarque %} <span class="remarque">({{ d.remarque }})</span>{% endif %}</li>
+            {%- endfor %}
+          </ul>
+          {%- else %}{{ s.periode or "à venir" }}{% endif %}
+        </dd>
+      </dl>
+
+      {%- if s.billetterie and (s.prochaineDate or s.aLAffiche) %}
+      <p><a class="bouton bouton-grand" href="{{ s.billetterie }}" target="_blank" rel="noopener">Réserver des billets</a></p>
+      {%- endif %}
+
+      {%- if s.texte %}
+      <div class="texte">{{ s.texte | html | safe }}</div>
+      {%- endif %}
+
+      {%- if s.flyer %}
+      <p><a class="lien-fleche" href="/media/{{ s.flyer.fichier }}" target="_blank" rel="noopener">{{ s.flyer.libelle or "Voir le flyer" }}</a></p>
+      {%- endif %}
+
+      {%- if s.videos and s.videos.length %}
+      <h2>Vidéos</h2>
+      <ul class="liste-simple">
+        {%- for v in s.videos %}<li><a class="lien-fleche" href="{{ v.url }}" target="_blank" rel="noopener">{{ v.titre }}</a></li>{% endfor %}
+      </ul>
+      {%- endif %}
+    </div>
+  </div>
+
+  {%- if s.photos and s.photos.length %}
+  <section class="photos" aria-labelledby="titre-photos">
+    <h2 id="titre-photos">Photos</h2>
+    <div class="grille-photos">
+      {%- asyncEach p in s.photos %}
+      <figure>{% image p.fichier, p.alt, "(min-width: 48rem) 33vw, 50vw", [400, 800] %}{% if p.legende %}<figcaption>{{ p.legende }}</figcaption>{% endif %}</figure>
+      {%- endeach %}
+    </div>
+  </section>
+  {%- endif %}
+</article>
+
+{%- if s.dates.length %}
+<script type="application/ld+json">{{ {
+  "@context": "https://schema.org",
+  "@type": "TheaterEvent",
+  "name": s.titre,
+  "startDate": s.dates[0].date + ("T" + s.dates[0].heure if s.dates[0].heure else ""),
+  "endDate": s.dates[s.dates.length - 1].date,
+  "eventStatus": "https://schema.org/EventScheduled",
+  "location": { "@type": "Place", "name": s.lieu.nom if s.lieu else tgv.site.nom, "address": { "@type": "PostalAddress", "addressLocality": (s.lieu.adresse.localite if (s.lieu and s.lieu.adresse) else "Vétroz"), "addressCountry": "CH" } },
+  "organizer": { "@type": "Organization", "name": tgv.site.nom, "url": tgv.site.url },
+  "offers": ({ "@type": "Offer", "url": s.billetterie } if s.billetterie else undefined),
+  "url": (page.url | absolue(tgv.site.url))
+} | jsonLd | safe }}</script>
+{%- endif %}

@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Définitions communes",
+  "$defs": {
+    "html": {
+      "type": "string",
+      "x-html": true,
+      "description": "HTML restreint : p, br, strong, b, em, i, u, a (href), ul, ol, li, h3, h4, blockquote."
+    },
+    "texteHtml": {
+      "description": "Texte libre en HTML restreint. Soit une chaîne, soit une liste de paragraphes (chaque élément est entouré de <p> s'il ne commence pas déjà par une balise de bloc).",
+      "oneOf": [
+        { "$ref": "#/$defs/html" },
+        { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/html" } }
+      ]
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://",
+      "description": "Adresse web complète (https://…)."
+    },
+    "cheminImage": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9/._-]*\\.(jpg|jpeg|png|webp)$",
+      "description": "Chemin relatif au dossier media/ (minuscules, sans espaces ni accents), ex. spectacles/2027/piece-comique/affiche.jpg"
+    },
+    "cheminDocument": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9/._-]*\\.(jpg|jpeg|png|webp|pdf)$",
+      "description": "Chemin relatif au dossier media/ (image ou PDF)."
+    },
+    "image": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fichier", "alt"],
+      "properties": {
+        "fichier": { "$ref": "#/$defs/cheminImage" },
+        "alt": { "type": "string", "minLength": 3, "description": "Description de l'image pour les personnes malvoyantes et les moteurs de recherche." },
+        "legende": { "type": "string", "description": "Légende affichée sous l'image (facultatif)." }
+      }
+    },
+    "document": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fichier"],
+      "properties": {
+        "fichier": { "$ref": "#/$defs/cheminDocument" },
+        "alt": { "type": "string", "minLength": 3, "description": "Description (obligatoire en pratique si c'est une image)." },
+        "libelle": { "type": "string", "description": "Texte du lien, ex. « Télécharger le flyer »." }
+      }
+    },
+    "personne": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["nom"],
+      "properties": {
+        "fonction": { "type": "string", "description": "Ex. Président, Caissière, Metteur en scène…" },
+        "nom": { "type": "string", "minLength": 2 },
+        "photo": { "$ref": "#/$defs/image" }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Page À propos",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["titre", "texte", "comite"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "titre": { "type": "string" },
+    "introduction": { "type": "string" },
+    "texte": { "$ref": "communs.schema.json#/$defs/texteHtml" },
+    "comite": {
+      "type": "array",
+      "description": "Membres du comité, dans l'ordre d'affichage.",
+      "items": { "$ref": "communs.schema.json#/$defs/personne" }
+    },
+    "equipe": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Équipe / staff (ancienne page Staff).",
+      "properties": {
+        "titre": { "type": "string" },
+        "texte": { "$ref": "communs.schema.json#/$defs/texteHtml" },
+        "membres": { "type": "array", "items": { "$ref": "communs.schema.json#/$defs/personne" } }
+      }
+    }
+  }
+}

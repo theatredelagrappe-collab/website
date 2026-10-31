@@ -1,0 +1,6 @@
+{
+  "$schema": "../../schemas/lieu.schema.json",
+  "nom": "Petit TGV",
+  "adresse": { "localite": "Vétroz" },
+  "carte": "https://maps.app.goo.gl/fzM5xD7u7ht74RcS9"
+}

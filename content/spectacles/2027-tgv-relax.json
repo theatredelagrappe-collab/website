@@ -1,0 +1,14 @@
+{
+  "$schema": "../../schemas/spectacle.schema.json",
+  "titre": "TGV Relax",
+  "provisoire": true,
+  "annee": 2027,
+  "categorie": "adulte",
+  "lieu": "petit-tgv",
+  "periode": "avril 2027",
+  "aLAffiche": true,
+  "resume": "Un spectacle en format intime, au Petit TGV.",
+  "texte": [
+    "Rendez-vous en avril 2027 au Petit TGV. Plus d'informations prochainement."
+  ]
+}

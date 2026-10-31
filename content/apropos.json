@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/apropos.schema.json",
+  "titre": "À propos",
+  "introduction": "Le Théâtre de la Grappe est une société de théâtre amateur fondée à Vétroz en 1985.",
+  "texte": [
+    "<em>Contenu à reprendre de l'ancien site (pages « Théâtre » et « Staff »).</em>"
+  ],
+  "comite": [
+    { "fonction": "Président", "nom": "Raymond Nalesso" }
+  ],
+  "equipe": {
+    "titre": "L'équipe",
+    "texte": ["<em>Contenu à reprendre de l'ancienne page « Staff ».</em>"],
+    "membres": []
+  }
+}

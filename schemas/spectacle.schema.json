@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Spectacle",
+  "description": "Un fichier par spectacle, nommé AAAA-slug.json (ex. 2027-piece-comique.json). Le nom du fichier donne l'adresse de la page.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["titre", "annee", "categorie"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "titre": { "type": "string", "minLength": 1 },
+    "provisoire": { "type": "boolean", "description": "true = le titre est provisoire (mention affichée)." },
+    "sousTitre": { "type": "string", "description": "Ex. « Comédie de Georges Feydeau »." },
+    "annee": { "type": "integer", "minimum": 1985, "maximum": 2100, "description": "Année de la première ; doit correspondre au début du nom de fichier." },
+    "categorie": {
+      "enum": ["adulte", "enfant", "jeunesse", "evenement"],
+      "description": "adulte = spectacle tout public de la troupe ; enfant = spectacle pour enfants ; jeunesse = spectacle de l'atelier jeunesse ; evenement = soirée spéciale, anniversaire…"
+    },
+    "lieu": { "type": "string", "pattern": "^[a-z0-9-]+$", "description": "Identifiant d'un lieu (nom de fichier dans content/lieux/ sans .json), ex. union, petit-tgv." },
+    "periode": { "type": "string", "description": "Affiché tant qu'aucune date n'est saisie, ex. « février 2027 »." },
+    "dates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["date"],
+        "properties": {
+          "date": { "type": "string", "format": "date", "description": "AAAA-MM-JJ" },
+          "heure": { "type": "string", "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$", "description": "HH:MM" },
+          "remarque": { "type": "string", "description": "Ex. supplémentaire, complet, matinée…" }
+        }
+      }
+    },
+    "billetterie": { "$ref": "communs.schema.json#/$defs/url", "description": "Lien Infomaniak (un seul par spectacle)." },
+    "affiche": { "$ref": "communs.schema.json#/$defs/image" },
+    "flyer": { "$ref": "communs.schema.json#/$defs/document" },
+    "resume": { "type": "string", "maxLength": 300, "description": "Accroche courte en texte simple (cartes, partage sur les réseaux). Sinon, le début du texte est utilisé." },
+    "texte": { "$ref": "communs.schema.json#/$defs/texteHtml" },
+    "videos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["titre", "url"],
+        "properties": {
+          "titre": { "type": "string" },
+          "url": { "$ref": "communs.schema.json#/$defs/url" }
+        }
+      }
+    },
+    "photos": { "type": "array", "items": { "$ref": "communs.schema.json#/$defs/image" } },
+    "aLAffiche": { "type": "boolean", "description": "Force l'affichage sur l'accueil (utile tant que les dates ne sont pas connues). Sinon, automatique tant qu'il reste une date à venir." },
+    "brouillon": { "type": "boolean", "description": "true = non publié." }
+  }
+}

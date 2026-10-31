@@ -1,0 +1,15 @@
+{
+  "$schema": "../../schemas/spectacle.schema.json",
+  "titre": "Pièce comique",
+  "provisoire": true,
+  "annee": 2027,
+  "categorie": "adulte",
+  "lieu": "union",
+  "periode": "février 2027",
+  "aLAffiche": true,
+  "resume": "Le grand spectacle de la saison, à la salle de l'Union.",
+  "texte": [
+    "Le grand spectacle de la saison 2027 se jouera en février à la salle de l'Union. Titre, distribution et dates seront annoncés prochainement.",
+    "Suivez-nous sur <a href=\"https://www.facebook.com/theatredelagrappe\">Facebook</a> et <a href=\"https://www.instagram.com/theatredelagrappe/\">Instagram</a> pour ne rien manquer."
+  ]
+}

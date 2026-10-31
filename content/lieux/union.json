@@ -1,0 +1,6 @@
+{
+  "$schema": "../../schemas/lieu.schema.json",
+  "nom": "Salle de l'Union",
+  "adresse": { "localite": "Vétroz" },
+  "carte": "https://maps.app.goo.gl/Sww8EFWdkHHRhm3h9"
+}

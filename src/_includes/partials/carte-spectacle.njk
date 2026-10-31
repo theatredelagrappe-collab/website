@@ -1,0 +1,20 @@
+{#- Attend une variable « spectacle ». #}
+<article class="carte">
+  <a class="carte-lien" href="{{ spectacle.url }}">
+    <div class="carte-visuel">
+      {%- if spectacle.affiche %}
+      {% image spectacle.affiche.fichier, spectacle.affiche.alt, "(min-width: 64rem) 22rem, (min-width: 40rem) 45vw, 100vw", [400, 800] %}
+      {%- else %}
+      <div class="affiche-vide"><img src="/assets/logo.svg" alt="" width="227" height="193"></div>
+      {%- endif %}
+    </div>
+    <div class="carte-texte">
+      <p class="surtitre">{{ spectacle.categorie | categorieLibelle }}{% if spectacle.lieu %} · {{ spectacle.lieu.nom }}{% endif %}</p>
+      <h3>{{ spectacle.titre }}{% if spectacle.provisoire %} <span class="badge">titre provisoire</span>{% endif %}</h3>
+      <p class="dates">{{ spectacle | resumeDates }}</p>
+    </div>
+  </a>
+  {%- if spectacle.billetterie and spectacle.prochaineDate %}
+  <p class="carte-action"><a class="bouton" href="{{ spectacle.billetterie }}" target="_blank" rel="noopener">Réserver</a></p>
+  {%- endif %}
+</article>

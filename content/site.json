@@ -1,0 +1,24 @@
+{
+  "$schema": "../schemas/site.schema.json",
+  "nom": "Théâtre de la Grappe",
+  "nomCourt": "TGV",
+  "description": "Société de théâtre amateur à Vétroz (Valais) depuis 1985 : spectacles, théâtre pour enfants et atelier jeunesse.",
+  "url": "https://www.theatredelagrappe.ch",
+  "fondation": 1985,
+  "contact": {
+    "email": "contact@theatredelagrappe.ch",
+    "telephone": "+41 79 514 95 84",
+    "adresse": {
+      "complement": "c/o Raymond Nalesso",
+      "rue": "Rue des Semailles 28",
+      "npa": "1963",
+      "localite": "Vétroz",
+      "pays": "Suisse"
+    }
+  },
+  "reseaux": {
+    "facebook": "https://www.facebook.com/theatredelagrappe",
+    "instagram": "https://www.instagram.com/theatredelagrappe/",
+    "youtube": "https://www.youtube.com/@Th%C3%A9%C3%A2tredelaGrappe"
+  }
+}

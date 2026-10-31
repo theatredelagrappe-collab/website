@@ -1,0 +1,13 @@
+---
+layout: layouts/base.njk
+titre: Nos lieux
+description: Les salles où se jouent les spectacles du Théâtre de la Grappe.
+---
+<div class="conteneur section">
+  <h1>Nos lieux</h1>
+  <ul class="grille-lieux">
+    {%- for lieu in tgv.listeLieux %}
+    <li><a class="carte-lieu" href="{{ lieu.url }}"><strong>{{ lieu.nom }}</strong>{% if lieu.adresse %}<span>{{ lieu.adresse.localite }}</span>{% endif %}</a></li>
+    {%- endfor %}
+  </ul>
+</div>

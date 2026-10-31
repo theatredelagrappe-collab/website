@@ -1,0 +1,26 @@
+<header class="entete">
+  <div class="entete-interieur">
+    <a class="entete-logo" href="/" aria-label="{{ tgv.site.nom }} — accueil">
+      <img src="/assets/logo.svg" alt="{{ tgv.site.nom }}" width="227" height="193">
+    </a>
+    <nav class="nav-large" aria-label="Navigation principale">
+      <ul>
+        {%- for lien in navigation %}
+        {%- set actif = (page.url == lien.url) or (lien.url != "/" and page.url.startsWith(lien.url)) %}
+        <li><a href="{{ lien.url }}"{% if actif %} aria-current="page"{% endif %}>{{ lien.titre }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+    <details class="nav-mobile">
+      <summary><span class="burger" aria-hidden="true"></span><span class="sr">Menu</span></summary>
+      <nav aria-label="Navigation principale (mobile)">
+        <ul>
+          {%- for lien in navigation %}
+          {%- set actif = (page.url == lien.url) or (lien.url != "/" and page.url.startsWith(lien.url)) %}
+          <li><a href="{{ lien.url }}"{% if actif %} aria-current="page"{% endif %}>{{ lien.titre }}</a></li>
+          {%- endfor %}
+        </ul>
+      </nav>
+    </details>
+  </div>
+</header>

@@ -1,0 +1,19 @@
+---
+layout: layouts/base.njk
+titre: Spectacles
+description: Tous les spectacles du Théâtre de la Grappe depuis 1985.
+---
+<div class="conteneur section">
+  <h1>Spectacles</h1>
+  <p class="chapeau">Tous nos spectacles depuis {{ tgv.site.fondation }}.</p>
+  {%- asyncEach groupe in tgv.parAnnee %}
+  <section class="annee" aria-labelledby="annee-{{ groupe.annee }}">
+    <h2 id="annee-{{ groupe.annee }}">{{ groupe.annee }}</h2>
+    <div class="grille-cartes">
+      {%- asyncEach spectacle in groupe.spectacles %}
+      {% include "partials/carte-spectacle.njk" %}
+      {%- endeach %}
+    </div>
+  </section>
+  {%- endeach %}
+</div>

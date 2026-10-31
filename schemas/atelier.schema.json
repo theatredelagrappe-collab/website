@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Atelier jeunesse",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["titre", "saison", "texte"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "titre": { "type": "string" },
+    "saison": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{4}$", "description": "Ex. 2026-2027" },
+    "introduction": { "type": "string" },
+    "texte": { "$ref": "communs.schema.json#/$defs/texteHtml" },
+    "modalites": {
+      "type": "array",
+      "description": "Informations pratiques sous forme de lignes libellé / valeur (âge, horaire, lieu, prix…).",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["libelle", "valeur"],
+        "properties": {
+          "libelle": { "type": "string" },
+          "valeur": { "$ref": "communs.schema.json#/$defs/html" }
+        }
+      }
+    },
+    "inscription": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url"],
+      "properties": {
+        "url": { "$ref": "communs.schema.json#/$defs/url", "description": "Lien du formulaire Google Forms." },
+        "ouverte": { "type": "boolean", "default": true, "description": "false = bouton masqué, inscriptions fermées." },
+        "texte": { "type": "string", "description": "Texte du bouton." }
+      }
+    },
+    "photos": {
+      "type": "array",
+      "description": "Uniquement des photos où les enfants ne sont pas reconnaissables.",
+      "items": { "$ref": "communs.schema.json#/$defs/image" }
+    }
+  }
+}

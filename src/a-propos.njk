@@ -1,0 +1,54 @@
+---
+layout: layouts/base.njk
+permalink: /a-propos/
+eleventyComputed:
+  titre: "{{ tgv.apropos.titre }}"
+  description: "{{ tgv.apropos.introduction or tgv.site.description }}"
+---
+{%- set p = tgv.apropos %}
+<article class="conteneur section page-texte">
+  <h1>{{ p.titre }}</h1>
+  {%- if p.introduction %}<p class="chapeau">{{ p.introduction }}</p>{% endif %}
+  <div class="texte">{{ p.texte | html | safe }}</div>
+
+  {%- if p.comite.length %}
+  <section class="section-courte" aria-labelledby="titre-comite">
+    <h2 id="titre-comite">Le comité</h2>
+    <ul class="grille-personnes">
+      {%- asyncEach m in p.comite %}
+      <li class="personne">
+        {%- if m.photo %}{% image m.photo.fichier, m.photo.alt, "8rem", [160, 320] %}{% endif %}
+        <strong>{{ m.nom }}</strong>{% if m.fonction %}<span>{{ m.fonction }}</span>{% endif %}
+      </li>
+      {%- endeach %}
+    </ul>
+  </section>
+  {%- endif %}
+
+  {%- if p.equipe %}
+  <section class="section-courte" aria-labelledby="titre-equipe">
+    <h2 id="titre-equipe">{{ p.equipe.titre or "L'équipe" }}</h2>
+    {%- if p.equipe.texte %}<div class="texte">{{ p.equipe.texte | html | safe }}</div>{% endif %}
+    {%- if p.equipe.membres and p.equipe.membres.length %}
+    <ul class="grille-personnes">
+      {%- asyncEach m in p.equipe.membres %}
+      <li class="personne">
+        {%- if m.photo %}{% image m.photo.fichier, m.photo.alt, "8rem", [160, 320] %}{% endif %}
+        <strong>{{ m.nom }}</strong>{% if m.fonction %}<span>{{ m.fonction }}</span>{% endif %}
+      </li>
+      {%- endeach %}
+    </ul>
+    {%- endif %}
+  </section>
+  {%- endif %}
+
+  <section class="section-courte encadre" aria-labelledby="titre-contact">
+    <h2 id="titre-contact">Nous contacter</h2>
+    {%- set c = tgv.site.contact %}
+    <p>Écrivez-nous à <a href="mailto:{{ c.email }}">{{ c.email }}</a>{% if c.telephone %} ou appelez le <a href="{{ c.telephone | telLien }}">{{ c.telephone }}</a>{% endif %}.</p>
+    {%- if c.adresse %}
+    <p>Adresse postale : {{ tgv.site.nom }}, {% if c.adresse.complement %}{{ c.adresse.complement }}, {% endif %}{{ c.adresse.rue }}, {{ c.adresse.npa }} {{ c.adresse.localite }}.</p>
+    {%- endif %}
+    <p>Nos lieux de spectacle : {% for lieu in tgv.listeLieux %}<a href="{{ lieu.url }}">{{ lieu.nom }}</a>{% if not loop.last %}, {% endif %}{% endfor %}.</p>
+  </section>
+</article>

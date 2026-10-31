@@ -1,0 +1,18 @@
+---
+layout: layouts/base.njk
+titre: Mentions légales
+permalink: /mentions-legales/
+---
+{%- set c = tgv.site.contact %}
+<article class="conteneur section page-texte">
+  <h1>Mentions légales</h1>
+  <h2>Éditeur du site</h2>
+  <p>{{ tgv.site.nom }}, association à but non lucratif<br>
+  {%- if c.adresse %}{% if c.adresse.complement %}{{ c.adresse.complement }}<br>{% endif %}{{ c.adresse.rue }}<br>{{ c.adresse.npa }} {{ c.adresse.localite }}, {{ c.adresse.pays or "Suisse" }}<br>{% endif %}
+  <a href="mailto:{{ c.email }}">{{ c.email }}</a></p>
+  <h2>Hébergement</h2>
+  <p>Ce site est hébergé par GitHub Pages (GitHub, Inc., San Francisco, États-Unis).</p>
+  <h2>Droits</h2>
+  <p>Les textes, affiches et photographies publiés sur ce site appartiennent au {{ tgv.site.nom }} ou à leurs auteurs respectifs. Toute reproduction nécessite une autorisation préalable.</p>
+  <p>Voir aussi la <a href="/confidentialite/">déclaration de confidentialité</a>.</p>
+</article>

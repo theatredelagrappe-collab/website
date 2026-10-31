@@ -1,0 +1,159 @@
+/* Feuille de style principale. Les couleurs et polices viennent de theme.css (theme/theme.json). */
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: var(--police-texte);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+img { max-width: 100%; height: auto; display: block; }
+picture { display: block; }
+a { color: var(--accent); text-underline-offset: 0.15em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+h1, h2, h3, h4 { font-family: var(--police-titres); line-height: 1.2; margin: 0 0 0.5em; font-weight: 700; }
+h1 { font-size: clamp(2rem, 6vw, 3rem); }
+h2 { font-size: clamp(1.4rem, 4vw, 1.9rem); margin-top: 1.5em; }
+h3 { font-size: 1.25rem; }
+p, ul, ol, dl, blockquote { margin: 0 0 1em; }
+
+.sr, .evitement:not(:focus) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.evitement:focus { position: fixed; top: 0.5rem; left: 0.5rem; z-index: 10; background: var(--surface); padding: 0.5rem 1rem; }
+
+.conteneur { width: 100%; max-width: var(--largeur-max); margin-inline: auto; padding-inline: 1rem; }
+@media (min-width: 40rem) { .conteneur { padding-inline: 1.5rem; } }
+.section { padding-block: 2rem; }
+.section > h2:first-child, .section-courte > h2:first-child { margin-top: 0; }
+.section-courte { margin-top: 2.5rem; }
+.chapeau { font-size: 1.2rem; color: var(--texte-discret); max-width: 40rem; }
+.surtitre { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; font-weight: 600; color: var(--texte-discret); margin-bottom: 0.4em; }
+.discret { color: var(--texte-discret); }
+.fil { font-size: 0.9rem; color: var(--texte-discret); }
+.fil a { color: inherit; }
+.liste-simple { list-style: none; padding: 0; }
+.liste-simple li { margin-bottom: 0.35em; }
+.lien-fleche::after { content: " →"; }
+
+/* --- En-tête -------------------------------------------------------------- */
+.entete { background: var(--fond); border-bottom: 1px solid var(--bordure); position: sticky; top: 0; z-index: 5; }
+.entete-interieur { max-width: var(--largeur-max); margin-inline: auto; padding: 0.5rem 1rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.entete-logo img { height: 3.25rem; width: auto; }
+.nav-large { display: none; }
+.nav-large ul, .nav-mobile ul { list-style: none; margin: 0; padding: 0; }
+.nav-large a, .nav-mobile a { color: var(--texte); text-decoration: none; font-weight: 600; }
+.nav-large a[aria-current], .nav-mobile a[aria-current] { color: var(--accent); }
+
+.nav-mobile summary { list-style: none; cursor: pointer; padding: 0.75rem; margin-right: -0.75rem; }
+.nav-mobile summary::-webkit-details-marker { display: none; }
+.burger, .burger::before, .burger::after { display: block; width: 1.5rem; height: 2px; background: var(--texte); border-radius: 2px; position: relative; transition: transform 0.2s; }
+.burger::before, .burger::after { content: ""; position: absolute; left: 0; }
+.burger::before { top: -7px; }
+.burger::after { top: 7px; }
+.nav-mobile[open] .burger { background: transparent; }
+.nav-mobile[open] .burger::before { transform: translateY(7px) rotate(45deg); }
+.nav-mobile[open] .burger::after { transform: translateY(-7px) rotate(-45deg); }
+.nav-mobile nav { position: absolute; left: 0; right: 0; top: 100%; background: var(--fond); border-bottom: 1px solid var(--bordure); box-shadow: 0 12px 24px rgb(0 0 0 / 0.08); }
+.nav-mobile li a { display: block; padding: 0.9rem 1rem; border-top: 1px solid var(--bordure); font-size: 1.1rem; }
+
+@media (min-width: 52rem) {
+  .nav-mobile { display: none; }
+  .nav-large { display: block; }
+  .nav-large ul { display: flex; gap: 1.75rem; }
+  .nav-large a[aria-current] { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.4em; }
+  .entete-logo img { height: 4rem; }
+}
+
+/* --- Boutons -------------------------------------------------------------- */
+.bouton {
+  display: inline-block; background: var(--accent); color: var(--accent-texte); text-decoration: none;
+  font-weight: 700; padding: 0.7rem 1.25rem; border-radius: var(--rayon); border: 2px solid var(--accent);
+  line-height: 1.2; margin: 0 0.5rem 0.5rem 0;
+}
+.bouton:hover { filter: brightness(1.12); text-decoration: none; }
+.bouton-secondaire { background: transparent; color: var(--accent); }
+.bouton-grand { font-size: 1.1rem; padding: 0.9rem 1.6rem; }
+.badge { display: inline-block; font-family: var(--police-texte); font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--texte-discret); border: 1px solid var(--bordure); border-radius: 999px; padding: 0.1rem 0.5rem; vertical-align: middle; }
+
+/* --- Accueil -------------------------------------------------------------- */
+.accueil-intro { padding-block: 2.5rem 0.5rem; }
+.accueil-intro h1 { margin-bottom: 0.25em; }
+.bandeau { background: var(--surface); border-block: 1px solid var(--bordure); }
+.bandeau h2 { margin-top: 0; }
+.bandeau-interieur { display: grid; gap: 1rem; }
+@media (min-width: 48rem) { .bandeau-interieur { grid-template-columns: 1fr auto; align-items: center; } .bandeau-actions { margin: 0; } }
+
+/* --- Cartes spectacles ---------------------------------------------------- */
+.grille-cartes { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); }
+.carte { background: var(--surface); border: 1px solid var(--bordure); border-radius: var(--rayon); overflow: hidden; display: flex; flex-direction: column; }
+.carte-lien { color: inherit; text-decoration: none; flex: 1; }
+.carte-lien:hover h3 { text-decoration: underline; }
+.carte-visuel { aspect-ratio: 3 / 4; background: var(--fond); overflow: hidden; }
+.carte-visuel picture img { width: 100%; height: 100%; object-fit: cover; }
+.carte-texte { padding: 1rem 1rem 0.5rem; }
+.carte-texte h3 { margin-bottom: 0.25em; }
+.carte .dates { color: var(--texte-discret); margin: 0; }
+.carte-action { padding: 0 1rem 0.5rem; margin: 0; }
+.affiche-vide { width: 100%; height: 100%; display: grid; place-items: center; background: var(--fond); }
+.affiche-vide img { width: 60%; height: auto; opacity: 0.16; }
+
+.annee { margin-top: 1rem; }
+.annee h2 { border-bottom: 1px solid var(--bordure); padding-bottom: 0.25em; }
+
+/* --- Page spectacle ------------------------------------------------------- */
+.spectacle-grille { display: grid; gap: 1.5rem; }
+.spectacle-affiche .affiche-vide { aspect-ratio: 3 / 4; border-radius: var(--rayon); border: 1px solid var(--bordure); }
+.spectacle-affiche picture img { border-radius: var(--rayon); box-shadow: 0 10px 30px rgb(0 0 0 / 0.12); }
+.spectacle-infos h1 { margin-bottom: 0.2em; }
+.sous-titre { font-size: 1.15rem; color: var(--texte-discret); }
+@media (min-width: 48rem) {
+  .spectacle-grille { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 2.5rem; align-items: start; }
+  .spectacle-affiche { position: sticky; top: 6rem; }
+}
+.fiche { display: grid; grid-template-columns: max-content 1fr; gap: 0.4rem 1rem; padding: 1rem 0; border-block: 1px solid var(--bordure); margin-block: 1rem 1.5rem; }
+.fiche dt { font-weight: 700; }
+.fiche dd { margin: 0; }
+.liste-dates { list-style: none; padding: 0; margin: 0; }
+.liste-dates .passee { color: var(--texte-discret); text-decoration: line-through; }
+.remarque { color: var(--texte-discret); }
+.legende, figcaption { font-size: 0.9rem; color: var(--texte-discret); margin-top: 0.4rem; }
+.texte { max-width: 42rem; }
+.texte blockquote { border-left: 3px solid var(--accent); padding-left: 1rem; font-style: italic; }
+
+.grille-photos { display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 12rem), 1fr)); margin-block: 1rem; }
+.grille-photos figure { margin: 0; }
+.grille-photos img { border-radius: calc(var(--rayon) / 2); }
+
+/* --- Pages de texte, personnes, lieux ------------------------------------- */
+.page-texte { max-width: 48rem; }
+.encadre { background: var(--surface); border: 1px solid var(--bordure); border-radius: var(--rayon); padding: 1.25rem; }
+.grille-personnes { list-style: none; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); }
+.personne { display: flex; flex-direction: column; }
+.personne img { width: 8rem; height: 8rem; object-fit: cover; border-radius: 50%; margin-bottom: 0.5rem; }
+.personne span { color: var(--texte-discret); font-size: 0.95rem; }
+.grille-lieux { list-style: none; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr)); }
+.carte-lieu { display: flex; flex-direction: column; padding: 1.25rem; background: var(--surface); border: 1px solid var(--bordure); border-radius: var(--rayon); text-decoration: none; color: var(--texte); }
+.carte-lieu strong { font-family: var(--police-titres); font-size: 1.3rem; }
+.carte-lieu span { color: var(--texte-discret); }
+.lieu-photo { margin: 1.5rem 0; }
+
+/* --- Réseaux -------------------------------------------------------------- */
+.reseaux { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.reseaux a { display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font-weight: 600; padding: 0.5rem 0.9rem; border: 1px solid currentColor; border-radius: 999px; }
+.icone { width: 1.3rem; height: 1.3rem; }
+
+/* --- Pied de page --------------------------------------------------------- */
+.pied { background: var(--pied); color: var(--pied-texte); margin-top: 3rem; }
+.pied a { color: inherit; }
+.pied h2 { font-size: 1.1rem; margin: 0 0 0.75rem; }
+.pied-bloc h2 + * + h2, .pied-bloc .reseaux + h2 { margin-top: 1.5rem; }
+.pied-interieur { max-width: var(--largeur-max); margin-inline: auto; padding: 2.5rem 1rem 1.5rem; display: grid; gap: 2rem; }
+@media (min-width: 48rem) { .pied-interieur { grid-template-columns: 1.2fr 1fr 1fr; padding-inline: 1.5rem; } }
+.pied-logo { width: 7rem; margin-bottom: 1rem; }
+.pied address { font-style: normal; }
+.pied .reseaux a { font-size: 0.95rem; }
+.pied-bas { border-top: 1px solid rgb(255 255 255 / 0.15); text-align: center; font-size: 0.85rem; padding: 1rem; opacity: 0.85; }
+.pied-bas p { margin: 0; }

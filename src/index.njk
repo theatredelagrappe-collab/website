@@ -1,0 +1,44 @@
+---
+layout: layouts/base.njk
+estAccueil: true
+---
+<section class="accueil-intro">
+  <div class="conteneur">
+    <h1>{{ tgv.site.nom }}</h1>
+    <p class="chapeau">Théâtre amateur à Vétroz depuis {{ tgv.site.fondation }}.</p>
+  </div>
+</section>
+
+<section class="section conteneur" aria-labelledby="titre-affiche">
+  <h2 id="titre-affiche">À l'affiche</h2>
+  {%- if tgv.aLAffiche.length %}
+  <div class="grille-cartes">
+    {%- asyncEach spectacle in tgv.aLAffiche %}
+    {% include "partials/carte-spectacle.njk" %}
+    {%- endeach %}
+  </div>
+  {%- else %}
+  <p>Les prochains spectacles seront bientôt annoncés. En attendant, suivez-nous sur les réseaux sociaux.</p>
+  {%- endif %}
+</section>
+
+<section class="section bandeau" aria-labelledby="titre-atelier">
+  <div class="conteneur bandeau-interieur">
+    <div>
+      <h2 id="titre-atelier">{{ tgv.atelier.titre }}</h2>
+      <p>{{ tgv.atelier.introduction }}</p>
+    </div>
+    <p class="bandeau-actions">
+      <a class="bouton bouton-secondaire" href="/atelier-jeunesse/">En savoir plus</a>
+      {%- if tgv.atelier.inscription and tgv.atelier.inscription.ouverte !== false %}
+      <a class="bouton" href="{{ tgv.atelier.inscription.url }}" target="_blank" rel="noopener">{{ tgv.atelier.inscription.texte or "S'inscrire" }}</a>
+      {%- endif %}
+    </p>
+  </div>
+</section>
+
+<section class="section conteneur" aria-labelledby="titre-reseaux">
+  <h2 id="titre-reseaux">Actualités, photos, coulisses</h2>
+  <p>La vie de la troupe se raconte sur nos réseaux sociaux.</p>
+  {% include "partials/reseaux.njk" %}
+</section>
