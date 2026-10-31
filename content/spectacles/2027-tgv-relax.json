@@ -10,5 +10,73 @@
   "resume": "Un spectacle en format intime, au Petit TGV.",
   "texte": [
     "Rendez-vous en avril 2027 au Petit TGV. Plus d'informations prochainement."
+  ],
+  "dates": [
+    {
+      "date": "2027-04-05",
+      "heure": "19:30",
+      "remarque": "Générale"
+    },
+    {
+      "date": "2027-04-07",
+      "heure": "19:30"
+    },
+    {
+      "date": "2027-04-10",
+      "heure": "19:30"
+    },
+    {
+      "date": "2027-04-11",
+      "heure": "17:30"
+    },
+    {
+      "date": "2027-04-14",
+      "heure": "19:30"
+    },
+    {
+      "date": "2027-04-21",
+      "heure": "19:30"
+    },
+    {
+      "date": "2027-04-25",
+      "heure": "17:30"
+    },
+    {
+      "date": "2027-05-05",
+      "heure": "19:30"
+    },
+    {
+      "date": "2027-05-09",
+      "heure": "17:30"
+    },
+    {
+      "date": "2027-05-12",
+      "heure": "19:30"
+    },
+    {
+      "date": "2027-05-19",
+      "heure": "19:30"
+    },
+    {
+      "date": "2027-05-22",
+      "heure": "19:30",
+      "remarque": "Privée FC"
+    },
+    {
+      "date": "2027-05-23",
+      "heure": "17:30"
+    },
+    {
+      "date": "2027-05-26",
+      "heure": "19:30"
+    },
+    {
+      "date": "2027-06-02",
+      "heure": "19:30"
+    },
+    {
+      "date": "2027-06-05",
+      "heure": "19:30"
+    }
   ]
 }

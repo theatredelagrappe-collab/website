@@ -2,8 +2,11 @@
   "$schema": "../../schemas/lieu.schema.json",
   "nom": "Salle de l'Union",
   "adresse": {
-    "localite": "Vétroz"
+   "rue": "Avenue de la Gare 1",
+   "npa": "1963",
+   "localite": "Vétroz"
   },
+  "description": ["Salle de l'Union, entrée à côté du café de l'Union (Chez Chen)."],
   "carte": "https://maps.app.goo.gl/Sww8EFWdkHHRhm3h9",
   "parkings": [
     "Les parkings indiqués sur le plan ci-dessous peuvent être utilisés lors des spectacles à la salle de l'Union."

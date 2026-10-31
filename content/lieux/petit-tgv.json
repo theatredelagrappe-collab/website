@@ -9,10 +9,11 @@
   "carte": "https://maps.app.goo.gl/fzM5xD7u7ht74RcS9",
   "description": [
     "Longtemps local de répétition du TGV, cette petite salle a été transformée pour accueillir des spectacles. Elle a été inaugurée en 2022 et peut accueillir jusqu'à 40 spectateurs.",
-    "C'est aussi là que se déroulent les cours de l'<a href=\"/atelier-jeunesse/\">atelier jeunesse</a>."
+    "C'est aussi là que se déroulent les cours de l'<a href=\"/atelier-jeunesse/\">atelier jeunesse</a>.",
+    "Parking à proximité, à côté du bâtiment des travaux publics de Vétroz, ou devant la gare d'Ardon, places limitées devant l'entrée."
   ],
   "transports": [
-    "La salle se trouve dans l'ancien stand de tir, au-dessus de la salle « Cornalin », à quelques pas de la gare d'Ardon."
+    "La salle se trouve dans l'ancien stand de tir, au-dessus de la salle « Cornalin », accès par l'Ouest, à quelques pas de la gare d'Ardon."
   ],
   "plan": {
     "fichier": "lieux/petit-tgv/plan-acces.jpg",

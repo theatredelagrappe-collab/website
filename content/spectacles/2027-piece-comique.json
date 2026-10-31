@@ -11,5 +11,65 @@
   "texte": [
     "Le grand spectacle de la saison 2027 se jouera en février à la salle de l'Union. Titre, distribution et dates seront annoncés prochainement.",
     "Suivez-nous sur <a href=\"https://www.facebook.com/theatredelagrappe\">Facebook</a> et <a href=\"https://www.instagram.com/theatredelagrappe/\">Instagram</a> pour ne rien manquer."
+  ],
+  "dates": [
+    {
+      "date": "2027-02-17",
+      "heure": "19:30",
+      "remarque": "Montage"
+    },
+    {
+      "date": "2027-02-19",
+      "heure": "19:30",
+      "remarque": "Montage"
+    },
+    {
+      "date": "2027-02-24",
+      "heure": "19:30",
+      "remarque": "Répétition générale"
+    },
+    {
+      "date": "2027-02-26",
+      "heure": "19:30"
+    },
+    {
+      "date": "2027-02-27",
+      "heure": "19:30"
+    },
+    {
+      "date": "2027-02-28",
+      "heure": "19:30"
+    },
+    {
+      "date": "2027-03-05",
+      "heure": "19:30"
+    },
+    {
+      "date": "2027-03-06",
+      "heure": "19:30"
+    },
+    {
+      "date": "2027-03-07",
+      "heure": "19:30"
+    },
+    {
+      "date": "2027-03-10",
+      "heure": "19:30",
+      "remarque": "A confirmer"
+    },
+    {
+      "date": "2027-03-11",
+      "heure": "19:30",
+      "remarque": "A confirmer"
+    },
+    {
+      "date": "2027-03-12",
+      "heure": "19:30"
+    },
+    {
+      "date": "2027-03-13",
+      "heure": "19:30",
+      "remarque": "Démontage"
+    }
   ]
 }
