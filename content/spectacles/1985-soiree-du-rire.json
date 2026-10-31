@@ -1,0 +1,16 @@
+{
+  "$schema": "../../schemas/spectacle.schema.json",
+  "titre": "Soirée du rire",
+  "annee": 1985,
+  "categorie": "evenement",
+  "dates": [
+    {
+      "date": "1985-05-15"
+    }
+  ],
+  "resume": "La soirée qui a donné naissance au Théâtre de la Grappe de Vétroz.",
+  "texte": [
+    "Après le succès d'un souper « Caf'conc » organisé en 1984 par les Amis Gymnastes, une « Soirée du rire » est mise sur pied le 15 mai 1985. Son succès conduit à la fondation du Théâtre de la Grappe de Vétroz quelques mois plus tard.",
+    "Toute l'histoire est à lire dans notre <a href=\"/historique/\">historique</a>."
+  ]
+}

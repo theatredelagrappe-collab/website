@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schemas/spectacle.schema.json",
+  "titre": "Revue du festival de l'Union",
+  "annee": 2016,
+  "categorie": "evenement",
+  "lieuTexte": "Place du Four, Vétroz",
+  "dates": [
+    {
+      "date": "2016-05-06",
+      "heure": "18:30"
+    }
+  ],
+  "resume": "Une petite revue « ad hoc » pour le 124e festival de la FFLRC organisé par l'Union à Vétroz.",
+  "texte": [
+    "Pas de grand spectacle ni de revue en 2016, mais le TGV n'est pas resté inactif !",
+    "Dans le cadre du 124ᵉ festival FFLRC organisé par l'Union à Vétroz, le TGV a été convié à se produire pour une petite revue « ad hoc ». Mise en scène de Roger Cotter &amp; fils, avec les renforts de l'Union : Raymond Nalesso, Pascal Nalesso et Erwin Millius."
+  ],
+  "videos": [
+    {
+      "titre": "Extraits des conversations téléphoniques",
+      "url": "https://youtu.be/9EsllodRTbY"
+    }
+  ]
+}

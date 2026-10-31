@@ -1,0 +1,33 @@
+{
+  "$schema": "../../schemas/spectacle.schema.json",
+  "titre": "La Cour des grandes",
+  "sousTitre": "Texte de Noémie Moulin",
+  "annee": 2022,
+  "categorie": "adulte",
+  "lieu": "petit-tgv",
+  "dates": [
+    {
+      "date": "2022-10-06",
+      "heure": "20:00"
+    },
+    {
+      "date": "2022-10-07",
+      "heure": "20:00"
+    },
+    {
+      "date": "2022-10-09",
+      "heure": "17:00"
+    }
+  ],
+  "affiche": {
+    "fichier": "spectacles/2022/la-cour-des-grandes/affiche.jpg",
+    "alt": "Flyer de « La Cour des grandes » : illustration de cinq jeunes femmes"
+  },
+  "resume": "Le quotidien de cinq jeunes femmes vivant sous le même toit, pour l'inauguration de la salle transformée du Petit TGV.",
+  "texte": [
+    "Pour l'inauguration de sa salle transformée, le TGV a accueilli ce spectacle au Petit TGV.",
+    "<blockquote>La Cour des grandes ouvre une porte sur le quotidien de cinq jeunes femmes vivant sous le même toit. Leurs vies entre les murs de l'appartement se teintent de leurs expériences au dehors, de leurs relations et des enjeux sociaux actuels. Oscillant entre courage et lassitude, cherchant leur voie entre chemin tracé et détours inopinés, chacune de ces colocataires trouve sa voix et raconte son histoire.</blockquote>",
+    "<p><strong>Jeu</strong> : Myriam Héritier, Noémie Moulin, Rachel Moulin, Marie Pitteloud, Sabrina Roh<br><strong>Texte</strong> : Noémie Moulin<br><strong>Mise en scène</strong> : Virginie Hugo<br><strong>Concept scénographique</strong> : Denis Correvon et Virginie Hugo</p>",
+    "Entrée libre, chapeau à la sortie. Les représentations ont affiché complet."
+  ]
+}

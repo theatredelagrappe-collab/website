@@ -1,0 +1,74 @@
+{
+  "$schema": "../../schemas/spectacle.schema.json",
+  "titre": "Paul m'a laissé sa clé !",
+  "sousTitre": "Comédie de François Scharre",
+  "annee": 2017,
+  "categorie": "adulte",
+  "lieuTexte": "Hall populaire d'Ardon",
+  "dates": [
+    {
+      "date": "2017-02-03",
+      "heure": "20:00"
+    },
+    {
+      "date": "2017-02-04",
+      "heure": "20:00"
+    },
+    {
+      "date": "2017-02-10",
+      "heure": "20:00"
+    },
+    {
+      "date": "2017-02-11",
+      "heure": "20:00"
+    },
+    {
+      "date": "2017-02-12",
+      "heure": "17:00"
+    },
+    {
+      "date": "2017-02-16",
+      "heure": "20:00",
+      "remarque": "supplémentaire"
+    },
+    {
+      "date": "2017-02-17",
+      "heure": "20:00"
+    },
+    {
+      "date": "2017-02-18",
+      "heure": "20:00"
+    }
+  ],
+  "affiche": {
+    "fichier": "spectacles/2017/paul-m-a-laisse-sa-cle/affiche.jpg",
+    "alt": "Affiche de « Paul m'a laissé sa clé ! » : une main tient une clé dans un trou de serrure"
+  },
+  "resume": "Quand Sophie vient cambrioler cet appartement apparemment vide pour le week-end, elle ne se doute pas que Paul, le locataire, a tendance à laisser sa clé à bien du monde…",
+  "texte": [
+    "Pièce comique de François Scharre, mise en scène par Patricia Solliard et Camille Fontannaz.",
+    "<blockquote>Quand Sophie vient cambrioler cet appartement apparemment vide pour le week-end, elle ne se doute pas que Paul, le locataire, a tendance à laisser sa clé à bien du monde. Surprise en flagrant délit, elle va être obligée de mentir et de changer d'identité pour essayer de se sortir d'affaire. Mais ce qu'elle ne sait pas, c'est qu'elle est chez Paul, champion du monde toutes catégories du bobard. Lorsque ses mensonges vont se télescoper avec ceux de Paul, le résultat ne va pas être triste. Cette comédie délirante où les personnages entrent et sortent sans arrêt commence à cent à l'heure pour finir à deux cents à l'heure. Attachez vos ceintures si vous ne voulez pas exploser de rire.</blockquote>",
+    "<h3>Distribution</h3>",
+    "<ul><li>Maud Solliard : Sophie, la cambrioleuse</li><li>Jean-Paul Papilloud : Léo, le voisin</li><li>Nicole Bosca : Henriette, la maman</li><li>Raymond Nalesso : Rico, le directeur</li><li>Audrey Tertrais : Virginie, la sœur</li><li>Laura Solliard : Monica, la copine</li><li>Nicolas Défayes : Vincent, l'ami</li><li>Fabrice Delaloye : Paul</li><li>Isabelle Fontannaz : Wendy, l'entraîneuse</li><li>Pascal Vergères : le prédicateur</li></ul>",
+    "<h3>Et aussi</h3>",
+    "<p><strong>Mise en scène</strong> : Patricia Solliard, Camille Fontannaz<br><strong>Scénographie</strong> : David Cotter<br><strong>Présidence</strong> : Marie-Françoise Udry<br><strong>Décors</strong> : Sonia Riand, Pierre-Yves Broccard, Maurice Martin Lambiel, Maud Solliard, Patricia Solliard<br><strong>Graphisme</strong> : Isabelle Fontannaz, Dominique Kuster<br><strong>Logistique et intendance</strong> : Chloé Fontannaz, Sylvie Bonvin, Fabienne Monnet, Lucie Riand, Marcel Michellod, Marie-Noëlle Fontannaz<br><strong>Maquillages</strong> : Nicole Mangili, Camille Fontannaz, Inês Fernandes<br><strong>Technique</strong> : Alexis Riand, Kevin Tertrais, Dominique Kuster, Christophe Genetti, Marcel Michellod, Sébastien Gass, Zoé Kuster</p>"
+  ],
+  "videos": [
+    {
+      "titre": "Vidéo intégrale filmée par Camille Cottagnoud",
+      "url": "https://youtu.be/Nh-3T3iami0"
+    }
+  ],
+  "photos": [
+    {
+      "fichier": "spectacles/2017/paul-m-a-laisse-sa-cle/photo-01.jpg",
+      "alt": "Montage de photos de répétition : acteurs à l'écoute, en action et metteuses en scène",
+      "legende": "En répétition"
+    },
+    {
+      "fichier": "spectacles/2017/paul-m-a-laisse-sa-cle/photo-02.jpg",
+      "alt": "Photo de groupe de toute l'équipe en plein air",
+      "legende": "Toute l'équipe, à la fin des représentations"
+    }
+  ]
+}

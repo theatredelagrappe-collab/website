@@ -1,0 +1,54 @@
+{
+  "$schema": "../../schemas/spectacle.schema.json",
+  "titre": "Tailleur pour dames",
+  "sousTitre": "Comédie de Georges Feydeau",
+  "annee": 2018,
+  "categorie": "adulte",
+  "lieuTexte": "Hall populaire d'Ardon",
+  "dates": [
+    {
+      "date": "2018-02-16",
+      "heure": "20:00"
+    },
+    {
+      "date": "2018-02-17",
+      "heure": "20:00"
+    },
+    {
+      "date": "2018-02-23",
+      "heure": "20:00"
+    },
+    {
+      "date": "2018-02-24",
+      "heure": "20:00"
+    },
+    {
+      "date": "2018-02-25",
+      "heure": "17:00"
+    },
+    {
+      "date": "2018-03-01",
+      "heure": "20:00",
+      "remarque": "supplémentaire"
+    },
+    {
+      "date": "2018-03-02",
+      "heure": "20:00"
+    },
+    {
+      "date": "2018-03-03",
+      "heure": "20:00"
+    }
+  ],
+  "affiche": {
+    "fichier": "spectacles/2018/tailleur-pour-dames/affiche.jpg",
+    "alt": "Affiche de « Tailleur pour dames » : un mannequin de couturière sur fond vert"
+  },
+  "resume": "Le docteur Moulineaux entame une liaison avec une de ses patientes… Mensonges en cascade et rebondissements imprévus signés Feydeau.",
+  "texte": [
+    "Pièce écrite par Georges Feydeau en 1886, mise en scène par Virginie Hugo.",
+    "<blockquote>Le docteur Moulineaux entame une liaison extra-conjugale avec Suzanne, une de ses patientes. Pour abriter cette passion adultère, il loue un entresol récemment occupé par une couturière. À peine installé dans les lieux avec sa maîtresse, Moulineaux voit débarquer quelques clientes de la confectionneuse, mais aussi sa belle-mère, sa femme légitime, le mari de Suzanne, lui-même accompagné de sa maîtresse… Mensonges en cascade et rebondissements imprévus rythment cette trépidante œuvre de jeunesse de celui que l'on a surnommé l'Horloger du rire.</blockquote>",
+    "<h3>Distribution</h3>",
+    "<ul><li>Nicolas Défayes : Moulineaux</li><li>Camille Fontannaz : Rosa</li><li>Isabelle Fontannaz : Mme Aigreville</li><li>Anne-Françoise Moix : Mme d'Herblay</li><li>Gaëtan Mottet : Aubin</li><li>Raymond Nalesso : Bassinet</li><li>Jean-Paul Papilloud : Étienne</li><li>Laura Solliard : Yvonne</li><li>Maud Solliard : Suzanne Aubin</li><li>Audrey Tertrais : Mme Pomponette</li><li>Pascal Vergère : Trissotin</li></ul>"
+  ]
+}

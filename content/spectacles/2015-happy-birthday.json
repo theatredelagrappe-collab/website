@@ -1,0 +1,89 @@
+{
+  "$schema": "../../schemas/spectacle.schema.json",
+  "titre": "Happy Birthday",
+  "sousTitre": "Les 30 ans du TGV : la pièce Sexy-Flag et la revue Valaiz'Aneries",
+  "annee": 2015,
+  "categorie": "adulte",
+  "lieu": "union",
+  "dates": [
+    {
+      "date": "2015-11-06",
+      "heure": "20:00"
+    },
+    {
+      "date": "2015-11-07",
+      "heure": "20:00"
+    },
+    {
+      "date": "2015-11-13",
+      "heure": "20:00"
+    },
+    {
+      "date": "2015-11-14",
+      "heure": "20:00"
+    },
+    {
+      "date": "2015-11-20",
+      "heure": "20:00"
+    },
+    {
+      "date": "2015-11-21",
+      "heure": "20:00"
+    },
+    {
+      "date": "2015-11-27",
+      "heure": "20:00"
+    },
+    {
+      "date": "2015-11-28",
+      "heure": "20:00"
+    }
+  ],
+  "affiche": {
+    "fichier": "spectacles/2015/happy-birthday/affiche.jpg",
+    "alt": "Affiche des 30 ans du TGV : un gâteau d'anniversaire sous des serpentins colorés"
+  },
+  "flyer": {
+    "fichier": "spectacles/2015/happy-birthday/flyer.jpg",
+    "alt": "Programme du spectacle des 30 ans, présentant la pièce et la revue",
+    "libelle": "Programme du spectacle"
+  },
+  "resume": "Pour ses 30 ans, le TGV présente la pièce Sexy-Flag et la revue Valaiz'Aneries.",
+  "texte": [
+    "Pour ses 30 ans, le TGV présente la pièce <strong>Sexy-Flag</strong> et la revue <strong>Valaiz'Aneries</strong>.",
+    "<h3>Sexy-Flag</h3>",
+    "Pièce comique écrite par Christian Rossignol et mise en scène par Patricia Solliard et David Cotter.",
+    "<p><strong>Acteurs</strong> : Nicolas Défayes, Laura Solliard, Isabelle Fontannaz, Pascal Vergères, Fabrice Delaloye, Camille Fontannaz</p>",
+    "<h3>Valaiz'Aneries</h3>",
+    "Revue écrite par le TGV, mise en scène par Gérard Constantin et accompagnée musicalement par Yves Pointet.",
+    "<p><strong>Acteurs</strong> : Jean-Paul Papilloud, Carole Dessimoz, Gérard Pugin, Nicole Bosca, Audrey Tertrais, Anne-Françoise Moix, Xavier Blanchet, Dominique Fontannaz, Yves-Robert Germanier, Marie-Françoise Udry</p>",
+    "<h3>Et aussi</h3>",
+    "<p><strong>Décors et technique</strong> : Sonia Riand, Pierre-Yves Broccard, Maurice Martin Lambiel, Christophe Genetti, Lucie Riand, Xavier Blanchet, Maud Solliard, François Mabillard<br><strong>Maquillage et coiffure</strong> : Sandra Fontannaz, Nicole Mangili, Manon Brugnolo, Maud Solliard<br><strong>Régie</strong> : Alexis Riand, Kevin Tertrais<br><strong>Logistique et intendance</strong> : Fabienne Monnet, Marcel Michellod, Marie-Noëlle Fontannaz, Chloé Fontannaz<br><strong>Graphisme</strong> : Isabelle Fontannaz, Dominique Kuster</p>"
+  ],
+  "videos": [
+    {
+      "titre": "Générique",
+      "url": "https://youtu.be/oC4WoebmJw0"
+    },
+    {
+      "titre": "La revue (DVD)",
+      "url": "https://www.youtube.com/playlist?list=PLWdPtbABB_p1DYkE50W_rERxiBFB1NtVY"
+    },
+    {
+      "titre": "La pièce (DVD)",
+      "url": "https://youtu.be/8KB0o2JBFqY"
+    },
+    {
+      "titre": "Publicité écran 1",
+      "url": "https://youtu.be/PV_z0LqFw10"
+    },
+    {
+      "titre": "Publicité écran 2",
+      "url": "https://youtu.be/WY_vP4Llv4s"
+    },
+    {
+      "titre": "Mise en place de la salle",
+      "url": "https://youtu.be/UR_U0BH23Ns"
+    }
+  ]
+}

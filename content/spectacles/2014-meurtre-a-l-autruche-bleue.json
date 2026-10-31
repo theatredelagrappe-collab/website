@@ -1,0 +1,31 @@
+{
+  "$schema": "../../schemas/spectacle.schema.json",
+  "titre": "Meurtre à l'Autruche bleue",
+  "sousTitre": "Comédie de Jean-Philippe Decrème",
+  "annee": 2014,
+  "categorie": "adulte",
+  "affiche": {
+    "fichier": "spectacles/2014/meurtre-a-l-autruche-bleue/affiche.jpg",
+    "alt": "Bandeau « Meurtre à l'Autruche bleue » : une autruche dans un viseur"
+  },
+  "resume": "Jacques veut vendre un château qui n'existe pas… Une hilarante comédie policière.",
+  "texte": [
+    "Comédie écrite par Jean-Philippe Decrème, mise en scène par Patricia Solliard et David Cotter.",
+    "<blockquote>Jacques veut vendre un château qui n'existe pas. Pour cela, il va séduire la patronne de l'auberge afin que celle-ci l'aide car, comme par hasard, tous ceux qui ont des raisons de lui en vouloir sont justement à l'auberge : son épouse, ses deux ex-maîtresses, les personnes qu'il a escroquées et même le commissaire qui est à sa recherche. Bref, il y a tous les ingrédients d'une hilarante comédie policière.</blockquote>",
+    "<p><strong>Acteurs</strong> : Isabelle Fontannaz, Jean-Paul Papilloud, Nicolas Défayes, Maud Solliard, Caroline Délèze, Lauriane Dorsaz, Michel Chèvre, Anne-Françoise Moix, Nicole Bosca, Fabrice Delaloye, Audrey Gillioz (Tertrais), Xavier Blanchet, Pascal Vergère<br><strong>Décors</strong> : Sonia Riand, Lucie Riand, Maurice Martin Lambiel, Pierre-Yves Broccard<br><strong>Maquillages</strong> : Sandra Fontannaz, Camille Fontannaz, Laura Solliard, Nicole Mangili<br><strong>Technique</strong> : Christophe Genetti, Alexis Riand, Xavier Blanchet, Jean-Paul Papilloud, Kevin Tertrais<br><strong>Logistique et intendance</strong> : Fabienne Monnet, Marcel Michellod, Marie-Noëlle Fontannaz<br><strong>Graphisme</strong> : Isabelle Fontannaz, Dominique Kuster<br><strong>Photographie</strong> : Dominique Kuster, Kevin Tertrais, Alain Favre, Jean-Claude Moix<br><strong>Musique du générique</strong> : Guillaume Moix<br><strong>Présidence</strong> : Marie-Françoise Udry</p>"
+  ],
+  "videos": [
+    {
+      "titre": "Film de lancement",
+      "url": "https://www.youtube.com/watch?v=J-l1ag-WUj4"
+    },
+    {
+      "titre": "Extrait (10 min)",
+      "url": "https://www.youtube.com/watch?v=bXDU5lG_esk"
+    },
+    {
+      "titre": "Intégrale",
+      "url": "https://youtu.be/3s9Y2bq_zPU"
+    }
+  ]
+}

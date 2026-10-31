@@ -1,0 +1,31 @@
+{
+  "$schema": "../../schemas/spectacle.schema.json",
+  "titre": "Le Suicidé",
+  "sousTitre": "Samo oubitsa — spectacle en plein air",
+  "annee": 2019,
+  "categorie": "adulte",
+  "lieuTexte": "Place du Four, Vétroz (en plein air)",
+  "periode": "août – septembre 2019",
+  "affiche": {
+    "fichier": "spectacles/2019/le-suicide/affiche.jpg",
+    "alt": "Affiche de style constructiviste russe pour « Samo oubitsa », spectacle en plein air place du Four"
+  },
+  "resume": "En 2019, le TGV se donne à fond avec les fanfares et le chœur mixte pour un spectacle en plein air à l'ambiance russe.",
+  "texte": [
+    "<strong>Samo oubitsa</strong>, ou « Le Suicidé » : pour 2019, le TGV se donne à fond avec les fanfares et le chœur mixte pour offrir un spectacle en plein air au centre du village de Vétroz, mis à l'ambiance russe.",
+    "Un site était dédié à l'événement, « Vétrograd », pour lequel quelque 600 bénévoles ont été recherchés (environ une trentaine par représentation)."
+  ],
+  "videos": [
+    {
+      "titre": "Bande-annonce",
+      "url": "https://youtu.be/wcCqNc2D624"
+    }
+  ],
+  "photos": [
+    {
+      "fichier": "spectacles/2019/le-suicide/photo-01.jpg",
+      "alt": "Comédiens en costumes traditionnels russes",
+      "legende": "Ambiance russe à Vétroz"
+    }
+  ]
+}

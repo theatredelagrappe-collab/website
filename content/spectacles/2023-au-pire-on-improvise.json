@@ -1,0 +1,27 @@
+{
+  "$schema": "../../schemas/spectacle.schema.json",
+  "titre": "Au pire on improvise",
+  "sousTitre": "Spectacle d'improvisation du collectif APOI",
+  "annee": 2023,
+  "categorie": "evenement",
+  "lieuTexte": "Salle de l'Amigne (1er étage), Vétroz",
+  "dates": [
+    {
+      "date": "2023-10-04",
+      "heure": "20:00"
+    },
+    {
+      "date": "2023-10-05",
+      "heure": "20:00"
+    },
+    {
+      "date": "2023-10-06",
+      "heure": "20:00"
+    }
+  ],
+  "resume": "Une heure d'improvisation théâtrale sur un fond musical lui aussi improvisé.",
+  "texte": [
+    "Recueillir quelques éléments (lieux, prénoms, métiers, etc.) imposés par le public puis, pendant une heure environ, improviser : voilà ce que propose le collectif Au pire on improvise (APOI). Créé en 2018, il est composé de deux improvisateurs, Justin et Romain, et d'un musicien, Pascal. Le trio propose des spectacles d'improvisation sur un fond musical lui aussi improvisé.",
+    "Toujours à l'affût d'une péripétie, APOI joue avec spontanéité. Sa devise : sérieusement considérer l'idée de ne pas se prendre au sérieux."
+  ]
+}

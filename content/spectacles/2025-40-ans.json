@@ -1,0 +1,65 @@
+{
+  "$schema": "../../schemas/spectacle.schema.json",
+  "titre": "Le TGV fête 40 ans et double la mise",
+  "sousTitre": "Le Béret de la Tortue & la revue Vétromobile",
+  "annee": 2025,
+  "categorie": "adulte",
+  "lieu": "union",
+  "dates": [
+    {
+      "date": "2025-11-14",
+      "heure": "19:30"
+    },
+    {
+      "date": "2025-11-15",
+      "heure": "19:30"
+    },
+    {
+      "date": "2025-11-16",
+      "heure": "17:00"
+    },
+    {
+      "date": "2025-11-21",
+      "heure": "19:30"
+    },
+    {
+      "date": "2025-11-22",
+      "heure": "19:30"
+    },
+    {
+      "date": "2025-11-23",
+      "heure": "17:00"
+    },
+    {
+      "date": "2025-11-26",
+      "heure": "19:30",
+      "remarque": "supplémentaire"
+    },
+    {
+      "date": "2025-11-28",
+      "heure": "19:30"
+    },
+    {
+      "date": "2025-11-29",
+      "heure": "19:30"
+    },
+    {
+      "date": "2025-11-30",
+      "heure": "17:00"
+    }
+  ],
+  "affiche": {
+    "fichier": "spectacles/2025/40-ans/affiche.jpg",
+    "alt": "Affiche des 40 ans : un gâteau d'anniversaire en forme de bombe, « 1 pièce + 1 revue »"
+  },
+  "resume": "Pour ses 40 ans, le TGV double la mise : une pièce de théâtre suivie d'une revue.",
+  "texte": [
+    "Pour ses 40 ans, le Théâtre de la Grappe double la mise et vous propose une pièce de théâtre suivie d'une revue.",
+    "<h3>Le Béret de la Tortue</h3>",
+    "Une comédie grinçante de Jean Dell et Gérald Sibleyras, mise en scène par Virginie Hugo.",
+    "Trois couples, une maison de vacances en bord de mer, une semaine pour décompresser… Avec ses dialogues affûtés, <em>Le Béret de la Tortue</em> dresse, tout en humour, le portrait de nos petites hypocrisies de vacances, de nos grandes frustrations… et du joyeux champ de bataille conjugal qui en découle. Une comédie fine, vive et délicieusement piquante. Chacun s'y reconnaîtra, personne ne l'admettra.",
+    "<h3>La revue Vétromobile</h3>",
+    "Auteurs anonymes, mise en scène par Daniel Vergère et Patricia Solliard.",
+    "Des travaux, y en avait trop ! Mais à Vétroz, on trouve toujours des solutions pour rester mobile. On sait prendre du recul et même de la hauteur. Et quand tout est remis à neuf, on peut trinquer et faire « Santé 9 ! ». Alors, comme toutes les routes mènent à « Vétromobile », venez vous distraire au Pays de l'Amigne."
+  ]
+}

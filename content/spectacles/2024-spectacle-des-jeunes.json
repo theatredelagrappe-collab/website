@@ -1,0 +1,17 @@
+{
+  "$schema": "../../schemas/spectacle.schema.json",
+  "titre": "Mauvaise journée & Les Papillons bleus",
+  "sousTitre": "Spectacle de fin d'année de l'atelier jeunesse",
+  "annee": 2024,
+  "categorie": "jeunesse",
+  "lieu": "petit-tgv",
+  "periode": "24 – 26 mai 2024",
+  "resume": "Deux pièces d'environ une heure, où tous les personnages se retrouvent sur scène en même temps, dans un huis clos intensif.",
+  "texte": [
+    "Deux pièces d'environ une heure chacune, où tous les personnages se retrouvent sur scène en même temps, dans un huis clos intensif, pour ces jeunes pleins d'ambition.",
+    "<h3>Mauvaise journée</h3>",
+    "Une comédie absurde. En se levant ce matin, Jeanne ne pensait pas faire face à tant d'émotions dans une seule journée. Passant de la stupeur à l'incompréhension, de la peur à la compassion, pour terminer par une explosion de colère qui la mènera à sa perte… Adaptation libre de Muriel Délèze.",
+    "<h3>Les Papillons bleus</h3>",
+    "Un hôpital psychiatrique où des pensionnaires, à la fois drôles et émouvants, se réfugient sur le toit pour échapper à l'imminence d'un raz de marée. L'entreprise de survie désespérée oscille entre délires et confessions coup de poing, jusqu'à l'issue surprenante qui donne envie de croire à l'impossible… Comédie dramatique de Matthieu Berthélémé, adaptée par Muriel Délèze."
+  ]
+}

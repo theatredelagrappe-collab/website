@@ -1,0 +1,31 @@
+{
+  "$schema": "../../schemas/spectacle.schema.json",
+  "titre": "Théâtre d'intérêt général",
+  "sousTitre": "Par le groupe des adolescents de l'atelier jeunesse",
+  "annee": 2025,
+  "categorie": "jeunesse",
+  "lieu": "petit-tgv",
+  "dates": [
+    {
+      "date": "2025-03-21",
+      "heure": "20:00"
+    },
+    {
+      "date": "2025-03-22",
+      "heure": "20:00"
+    },
+    {
+      "date": "2025-03-23",
+      "heure": "17:00"
+    }
+  ],
+  "affiche": {
+    "fichier": "spectacles/2025/theatre-d-interet-general/affiche.jpg",
+    "alt": "Affiche de « Théâtre d'intérêt général » : silhouettes noires sur fond blanc"
+  },
+  "resume": "De jeunes délinquants doivent travailler des scènes de Shakespeare pour une maison de retraite…",
+  "texte": [
+    "De jeunes délinquants se retrouvent pour quinze jours de travaux d'intérêt général dans un centre d'éducation. Ils vont devoir travailler des scènes de Shakespeare en vue d'une représentation pour la maison de retraite. Encadrés par deux dramaturges professionnels très différents, le théâtre va, contre toute attente, leur servir d'exutoire, entre humour, choc du langage et émotions adolescentes.",
+    "Production des ateliers théâtre du groupe 3 (adolescents), mise en scène par Muriel Délèze. Entrée gratuite, chapeau à la sortie."
+  ]
+}

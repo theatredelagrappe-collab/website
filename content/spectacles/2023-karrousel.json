@@ -1,0 +1,51 @@
+{
+  "$schema": "../../schemas/spectacle.schema.json",
+  "titre": "Karrousel",
+  "sousTitre": "Scénettes absurdes et autres comédiâneries",
+  "annee": 2023,
+  "categorie": "adulte",
+  "lieu": "petit-tgv",
+  "dates": [
+    {
+      "date": "2023-04-17",
+      "heure": "20:00"
+    },
+    {
+      "date": "2023-04-18",
+      "heure": "20:00"
+    },
+    {
+      "date": "2023-04-19",
+      "heure": "20:00"
+    },
+    {
+      "date": "2023-04-20",
+      "heure": "20:00"
+    },
+    {
+      "date": "2023-04-27",
+      "heure": "20:00"
+    },
+    {
+      "date": "2023-04-28",
+      "heure": "20:00"
+    },
+    {
+      "date": "2023-04-29",
+      "heure": "20:00"
+    },
+    {
+      "date": "2023-04-30",
+      "heure": "17:00"
+    }
+  ],
+  "affiche": {
+    "fichier": "spectacles/2023/karrousel/affiche.jpg",
+    "alt": "Affiche de « Karrousel », style rétro avec les dates d'avril 2023"
+  },
+  "resume": "Un mélange de textes représentant la valse de la vie, comme à bord d'un carrousel.",
+  "texte": [
+    "Mise en scène par Virginie Hugo.",
+    "Par un mélange de textes représentant la valse de la vie, nous allons vous emmener, comme à bord d'un carrousel, dans différents univers. Lâchez prise, laissez votre cœur s'emporter et votre esprit tournoyer, nous nous occupons du reste."
+  ]
+}

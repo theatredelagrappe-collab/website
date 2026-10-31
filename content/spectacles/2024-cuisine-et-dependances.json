@@ -1,0 +1,59 @@
+{
+  "$schema": "../../schemas/spectacle.schema.json",
+  "titre": "Cuisine et dépendances",
+  "sousTitre": "Comédie d'Agnès Jaoui et Jean-Pierre Bacri",
+  "annee": 2024,
+  "categorie": "adulte",
+  "lieuTexte": "Hall populaire d'Ardon",
+  "dates": [
+    {
+      "date": "2024-11-02",
+      "heure": "20:00"
+    },
+    {
+      "date": "2024-11-03",
+      "heure": "17:00"
+    },
+    {
+      "date": "2024-11-08",
+      "heure": "20:00"
+    },
+    {
+      "date": "2024-11-09",
+      "heure": "20:00"
+    },
+    {
+      "date": "2024-11-10",
+      "heure": "17:00"
+    },
+    {
+      "date": "2024-11-15",
+      "heure": "20:00"
+    },
+    {
+      "date": "2024-11-16",
+      "heure": "20:00"
+    },
+    {
+      "date": "2024-11-17",
+      "heure": "17:00"
+    }
+  ],
+  "affiche": {
+    "fichier": "spectacles/2024/cuisine-et-dependances/affiche.jpg",
+    "alt": "Affiche de « Cuisine et dépendances » : une marmite d'où s'envolent des cartes à jouer, sur fond rouge"
+  },
+  "resume": "Jacques et Martine accueillent de vieux amis qu'ils n'ont pas revus depuis dix ans. Tout est vu de la cuisine…",
+  "texte": [
+    "Jacques et Martine, couple apparemment sans histoire, accueillent de vieux amis qu'ils n'ont pas revus depuis dix ans. Ils ont organisé un dîner en l'honneur du mari de Charlotte, devenu présentateur vedette à la télévision. Parmi les invités figurent aussi Georges, le copain hébergé, Fred, le frère de Martine, et le voisin ne cesse de faire irruption dans la cuisine. Au cours de la soirée, la tension monte : la présence de celui qui a réussi déchaîne admiration, envie, jalousie et agressivité.",
+    "Tout cela est vu de la cuisine, où les convives viennent tour à tour se livrer, se plaindre et s'expliquer. La maîtresse de maison, entre deux plats, est dans tous ses états pendant que les personnages dévoilent, petit à petit, leurs névroses respectives…",
+    "Dans cette comédie sociale pertinente, Agnès Jaoui et Jean-Pierre Bacri partagent un même regard et une même envie de bousculer nos torpeurs, nos paresses et nos conformismes."
+  ],
+  "photos": [
+    {
+      "fichier": "spectacles/2024/cuisine-et-dependances/photo-01.jpg",
+      "alt": "La troupe salue sur scène",
+      "legende": "Les saluts"
+    }
+  ]
+}

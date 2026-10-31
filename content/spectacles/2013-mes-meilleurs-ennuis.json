@@ -1,0 +1,53 @@
+{
+  "$schema": "../../schemas/spectacle.schema.json",
+  "titre": "Mes meilleurs ennuis",
+  "sousTitre": "Comédie de Guillaume Mélanie",
+  "annee": 2013,
+  "categorie": "adulte",
+  "lieu": "union",
+  "dates": [
+    {
+      "date": "2013-06-07",
+      "heure": "20:30"
+    },
+    {
+      "date": "2013-06-08",
+      "heure": "20:30"
+    },
+    {
+      "date": "2013-06-14",
+      "heure": "20:30"
+    },
+    {
+      "date": "2013-06-15",
+      "heure": "20:30"
+    }
+  ],
+  "affiche": {
+    "fichier": "spectacles/2013/mes-meilleurs-ennuis/affiche.jpg",
+    "alt": "Affiche de « Mes meilleurs ennuis », titre en lettres rouges sur fond orangé"
+  },
+  "resume": "Une comédie délirante au rythme infernal : le lendemain d'une soirée bien arrosée, deux frères s'apprêtent à assister au mariage de leur sœur…",
+  "texte": [
+    "Comédie de Guillaume Mélanie, mise en scène par Patricia Solliard et David Cotter.",
+    "<blockquote>Cette comédie se veut délirante avec un rythme infernal : le lendemain d'une soirée bien arrosée, deux frères s'apprêtent à assister au mariage de leur sœur. Une matinée somme toute normale, mais qui va tourner au cauchemar ! Les problèmes vont s'enchaîner à vitesse grand V : le mariage est compromis. Les portes claquent, les quiproquos se succèdent et les amis d'hier deviennent les ennuis d'aujourd'hui…</blockquote>",
+    "<p><strong>Acteurs</strong> : Nicole Bosca, Jean-Paul Papilloud, Nicolas Défayes, Maud Solliard, Xavier Blanchet, Lauriane Dorsaz, Isabelle Fontannaz, Fabrice Delaloye, Caroline Délèze, Camille Fontannaz<br><strong>Décors</strong> : Sonia Riand, Pierre-Yves Broccard<br><strong>Sons et lumières</strong> : MAB, Christophe Genetti, Alexis Riand<br><strong>Maquillages</strong> : Sandra Fontannaz, Sandra Solliard<br><strong>Logistique et autres</strong> : Lucie, MF, Marcel, Anne-Do, Marie-Noëlle, Chloé, Fabienne, Marielle, Roger et les autres<br><strong>Graphisme</strong> : Isabelle Fontannaz, Dominique Kuster</p>"
+  ],
+  "videos": [
+    {
+      "titre": "Film de lancement",
+      "url": "https://www.youtube.com/watch?v=aodMkAXB5ZM"
+    },
+    {
+      "titre": "Intégrale (dernier filage)",
+      "url": "https://youtu.be/cmopeDsz1g8"
+    }
+  ],
+  "photos": [
+    {
+      "fichier": "spectacles/2013/mes-meilleurs-ennuis/photo-01.jpg",
+      "alt": "Les comédiens saluent sur scène",
+      "legende": "Les saluts"
+    }
+  ]
+}

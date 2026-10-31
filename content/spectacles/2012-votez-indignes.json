@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schemas/spectacle.schema.json",
+  "titre": "Votez indignés !",
+  "sousTitre": "Revue 2012",
+  "annee": 2012,
+  "categorie": "adulte",
+  "lieu": "union",
+  "periode": "septembre – octobre 2012",
+  "affiche": {
+    "fichier": "spectacles/2012/votez-indignes/affiche.jpg",
+    "alt": "Affiche de la Revue 2012 « Votez indignés ! » : portraits des acteurs en urnes de vote"
+  },
+  "resume": "Revue écrite par l'équipe du TGV et mise en scène par Yannick Poujol.",
+  "texte": [
+    "Revue écrite par l'équipe du TGV et mise en scène par Yannick Poujol.",
+    "<strong>Scènes</strong> : Prologue des indignés, PMU (Petite musique des urnes), Agglo Valais, Chez ces gens-là, Costa allegro, La bouse, Fin du monde.",
+    "<p><strong>Accompagnement musical</strong> : Jean-Michel Germanier<br><strong>Décors</strong> : Sonia, Marie-Noëlle, Dominique, Pierre-Yves, Chloé, Patricia, Alexis, Maurice-Martin, Lucie, Dominique<br><strong>Maquillages</strong> : Marie-Claude, Laura, Sandra<br><strong>Audiovisuel</strong> : Dominique, Patricia, Julien<br><strong>Lumières</strong> : François Mabillard<br><strong>Acteurs</strong> : Xavier, Jean-Paul, Caroline, David, Hélène, Marité, Marie-Françoise, Christophe, Isabelle, Camille, Pascal, Nicole, Roger, Nicolas, Yves-Robert, Fabrice, Laurianne</p>"
+  ]
+}
