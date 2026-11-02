@@ -29,6 +29,12 @@ eleventyComputed:
       {%- if s.provisoire %}<p><span class="badge">titre provisoire</span></p>{% endif %}
       {%- if s.sousTitre %}<p class="sous-titre">{{ s.sousTitre }}</p>{% endif %}
 
+      {%- if s.texte %}
+      <div class="texte">{{ s.texte | html | safe }}</div>
+      {%- elif s.resume %}
+      <p class="texte">{{ s.resume }}</p>
+      {%- endif %}
+
       <dl class="fiche">
         {%- if s.lieu %}
         <dt>Lieu</dt>
@@ -51,10 +57,6 @@ eleventyComputed:
 
       {%- if s.billetterie and (s.prochaineDate or s.aLAffiche) %}
       <p><a class="bouton bouton-grand" href="{{ s.billetterie }}" target="_blank" rel="noopener">Réserver des billets</a></p>
-      {%- endif %}
-
-      {%- if s.texte %}
-      <div class="texte">{{ s.texte | html | safe }}</div>
       {%- endif %}
 
       {%- if s.flyer and s.flyer.fichier.endsWith(".pdf") %}

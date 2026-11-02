@@ -12,6 +12,9 @@
       <p class="surtitre">{{ spectacle.categorie | categorieLibelle }}{% if spectacle.lieu %} · {{ spectacle.lieu.nom }}{% elif spectacle.lieuTexte %} · {{ spectacle.lieuTexte }}{% endif %}</p>
       <h3>{{ spectacle.titre }}{% if spectacle.provisoire %} <span class="badge">titre provisoire</span>{% endif %}</h3>
       <p class="dates">{{ spectacle | resumeDates }}</p>
+      {%- if spectacle.resume %}
+      <p class="carte-resume">{{ spectacle.resume }}</p>
+      {%- endif %}
     </div>
   </a>
   {%- if spectacle.billetterie and spectacle.prochaineDate %}
