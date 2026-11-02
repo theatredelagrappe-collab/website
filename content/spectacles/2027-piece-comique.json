@@ -1,15 +1,21 @@
 {
   "$schema": "../../schemas/spectacle.schema.json",
-  "titre": "Pièce comique",
-  "provisoire": true,
+  "titre": "Tais-toi et rame !",
+  "provisoire": false,
   "annee": 2027,
   "categorie": "adulte",
   "lieu": "union",
   "periode": "février 2027",
   "aLAffiche": true,
-  "resume": "Le grand spectacle de la saison, à la salle de l'Union.",
+  "resume": "Une comédie de Bernard Granger, mise en scène par Virginie Hugo.",
   "texte": [
-    "Le grand spectacle de la saison 2027 se jouera en février à la salle de l'Union. Titre, distribution et dates seront annoncés prochainement.",
+    "Le grand spectacle de la saison 2027 se jouera en février à la salle de l'Union.",
+    "Francis et Cécile ont trouvé la solution à leurs problèmes d'argent : kidnapper la femme d'un milliardaire et empocher une belle rançon. Simple, non ?",
+    "À un détail près : le milliardaire est en instance de divorce et ne semble pas particulièrement pressé de récupérer son épouse…",
+    "Quant à Augustine, l'otage, elle n'a aucune intention de se laisser brader ! Bien décidée à reprendre les choses en main, elle va transformer ce qui devait être un enlèvement lucratif en véritable cauchemar pour ses ravisseurs.",
+    "Ajoutez à cela des voisins envahissants, des visites particulièrement malvenues et quelques situations totalement improbables…",
+    "Une comédie déjantée, pleine de quiproquos et d'humour noir et où, pour garder la tête hors de l'eau, <b>il va falloir ramer !</b>",
+    "",
     "Suivez-nous sur <a href=\"https://www.facebook.com/theatredelagrappe\">Facebook</a> et <a href=\"https://www.instagram.com/theatredelagrappe/\">Instagram</a> pour ne rien manquer."
   ],
   "dates": [
